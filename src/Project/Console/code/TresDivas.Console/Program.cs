@@ -40,6 +40,9 @@ namespace TresDivas.Console
             // Use the channel from the filter.
             var hashTags = filtersFromSitecore.Select(p => p.Product_Hashtag.Trim()).Distinct();
             var hashtagString = string.Join(" OR ", hashTags);
+            var accountAgeFilter = filtersFromSitecore.Select(p => p.Twitter_Account_Age).Distinct();
+            var filterOutRetweets = filtersFromSitecore.FirstOrDefault(p => p.Filter_Out_Retweets);
+            var filterMinimumFollowers = filtersFromSitecore.Select(p => p.Minimum_Followers).Distinct();
 
             System.Console.WriteLine(user);
 
@@ -57,7 +60,7 @@ namespace TresDivas.Console
 
                 //stringify hashtags
                 var hashtags = theTweet.Hashtags.ToList();
-                var tweetHashtags = hashtags.Count > 0 ? string.Join(", ", hashtags) : string.Empty;
+                var tweetHashtags = hashtags.Count > 0 ? string.Join(", ", hashtags) : "Not Available";
 
                 // Name
                 var name = theTweet.CreatedBy.Name;
@@ -107,15 +110,19 @@ namespace TresDivas.Console
                     {
                         var dict = new Dictionary<string, string>();
 
-                        dict.Add("twitterHandle", "@" + twitterHandle);
-                        dict.Add("hashtags", "here: " + tweetHashtags);
+                        dict.Add("twitterhandle", "@" + twitterHandle);
+                        dict.Add("hashtags", tweetHashtags);
                         dict.Add("name", name);
-                        dict.Add("followersCount", followersCount.ToString());
-                        dict.Add("twitterHandleDescription", twitterHandleDescription);
-                        dict.Add("twitterHandleCreated", twitterHandleCreated.ToShortDateString());
-                        dict.Add("tweetFullText", tweetFullText);
-                        dict.Add("isRetweet", isRetweet.ToString());
-                        dict.Add("isVerified", isVerified.ToString());
+                        dict.Add("followerscount", followersCount.ToString());
+                        dict.Add("twitterhandledescription", twitterHandleDescription);
+                        dict.Add("twitterhandlecreated", twitterHandleCreated.ToShortDateString());
+                        dict.Add("tweetfulltext", tweetFullText);
+                        dict.Add("isretweet", isRetweet.ToString());
+                        dict.Add("isverified", isVerified.ToString());
+                        dict.Add("accountagefilter", accountAgeFilter.ToString());
+                        dict.Add("filteroutretweets", filterOutRetweets.ToString());
+                        dict.Add("filterminimumfollowers", filterMinimumFollowers.ToString());
+                        
                         var eventRequest = UTRequestBuilder.EventWithDefenitionId(eventDefinitionId)
                             .Timestamp(DateTime.Now)
                             .AddCustomValues(dict)

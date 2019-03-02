@@ -29,12 +29,12 @@ namespace TresDivas.SocialInteractions.Processing.Twitter.Processors
             // Build contact
             Logger.LogInformation("Tres Divas Twitter Interactions EnrichmentPipelineProcessor: " + arg.ProcessingResult.Interaction.Interaction.ChannelId);
 
-            //Task.Run(async () => { await Register(); }).Wait();
+            Task.Run(async () => { await Register(arg); }).Wait();
 
             return Task.FromResult(arg);
         }
 
-        private async Task Register()
+        private async Task Register(PipelineArgs arg)
         {
             CertificateHttpClientHandlerModifierOptions options =
                 CertificateHttpClientHandlerModifierOptions.Parse("StoreName=My;StoreLocation=LocalMachine;FindType=FindByThumbprint;FindValue=" + Constants.XConnectThumbprint);
@@ -51,63 +51,86 @@ namespace TresDivas.SocialInteractions.Processing.Twitter.Processors
 
             var cfg = new XConnectClientConfiguration(
                 new XdbRuntimeModel(ProductTrackingModel.Model), collectionClient, searchClient, configurationClient);
+           
 
-
-            using (var client = new XConnectClient(cfg))
+            foreach (var interactionEvent in arg.ProcessingResult.Interaction.Interaction.Events)
             {
-                try
+                if (interactionEvent.CustomValues != null && interactionEvent.CustomValues.Count > 0)
                 {
-                    ContactIdentifier contactIdentifier = new ContactIdentifier("twitter", "ProductSocial-" + "twitterHandle from args", ContactIdentifierType.Known);
+                    var name = interactionEvent.CustomValues["name"].Split(' ');
+                    var firstName = name[0] != null ? name[0] : "Not Available";
+                    var lastName =  name.Length > 1 ? name[1] : "Not Available";
 
-                    // Let's just save this for later
-                    //TODO: If time check for existing user.
-                    Identifier = contactIdentifier.Identifier;
-                    Contact contact = new Contact(contactIdentifier);
+                    var twitterHandle = interactionEvent.CustomValues["twitterhandle"];
+                    var twitterHandleCreated = Convert.ToDateTime(interactionEvent.CustomValues["twitterhandlecreated"]);
+                    var numberOfFollowers = Convert.ToInt32(interactionEvent.CustomValues["followerscount"]);
+                    var tweetfulltext = interactionEvent.CustomValues["tweetfulltext"];
+                    var hashtag = interactionEvent.CustomValues["hashtags"];
 
-                    //TODO Get from args custom values "Name". If space save first and last
-                    PersonalInformation personalInfo = new PersonalInformation()
+                    await cfg.InitializeAsync();
+                    using (var client = new XConnectClient(cfg))
                     {
-                        FirstName = "firstname",
-                        LastName = "lastname"
-                    };
+                        try
+                        {
 
-                    //Console.WriteLine("Twitter Handle?");
+                            ContactIdentifier contactIdentifier = new ContactIdentifier("twitter", twitterHandle, ContactIdentifierType.Known);
 
-                    //var handle = Console.ReadLine();
+                            // Let's just save this for later
+                            //TODO: If time check for existing user.
+                            Identifier = contactIdentifier.Identifier;
+                            Contact contact = new Contact(contactIdentifier);
 
-                    // TODO get from args
-                    TwitterAccountInfo visitorInfo = new TwitterAccountInfo()
-                    {
-                        TwitterHandle = "handle",
-                        TwitterStartDate = new DateTime(2006, 12, 15),
-                        NumberOfFollowers = 300,
-                        VerifiedTwitterHandle = false
-                    };
+                            //TODO Get from args custom values "Name". If space save first and last
+                            PersonalInformation personalInfo = new PersonalInformation()
+                            {
+                                FirstName = firstName,
+                                LastName = lastName
+                            };
 
-                    client.AddContact(contact);
-                    client.SetFacet(contact, TwitterAccountInfo.DefaultFacetKey, visitorInfo);
-                    client.SetFacet(contact, PersonalInformation.DefaultFacetKey, personalInfo);
+                            
+                            // TODO get from args
+                            TwitterAccountInfo visitorInfo = new TwitterAccountInfo()
+                            {
+                                TwitterHandle = twitterHandle,
+                                TwitterStartDate = twitterHandleCreated,
+                                NumberOfFollowers = numberOfFollowers,
+                                VerifiedTwitterHandle = false
+                            };
 
-                    var interaction = new Interaction(contact, InteractionInitiator.Contact, Guid.NewGuid(), ""); // GUID should be from a channel item in Sitecore
+                            client.AddContact(contact);
+                            client.SetFacet(contact, TwitterAccountInfo.DefaultFacetKey, visitorInfo);
+                            client.SetFacet(contact, PersonalInformation.DefaultFacetKey, personalInfo);
 
-                    //TODO Get from args
-                    var productTweet = new ProductTweet(); 
-                    productTweet.Tweet = "";
-                    productTweet.ProductHashtag = "";
+                            var interaction = new Interaction(contact, InteractionInitiator.Contact, arg.ProcessingResult.Interaction.Interaction.ChannelId, ""); // GUID should be from a channel item in Sitecore
 
-                    //TODO : Cognitive API Call from Deepthi's code
-                    //productTweet.Sentiment = decimal.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
+                            //TODO Get from args
+                            
+                            var productTweet = new ProductTweet();
+                            productTweet.Tweet = tweetfulltext;
+                            productTweet.ProductHashtag = hashtag;
+                            //TODO : Uncomment
+                            //productTweet.TwitterHandle = twitterHandle;
 
-                    interaction.Events.Add(new ProductReviewOutcome(productTweet, DateTime.UtcNow));
-                    client.AddInteraction(interaction);
-                    await client.SubmitAsync();
-                }
-                catch (XdbExecutionException ex)
-                {
-                    // Deal with exception
-                    Logger.LogInformation("Tres Divas Twitter Interactions EnrichmentPipelineProcessor: ", ex);
+                            //TODO : Cognitive API Call from Deepthi's code
+                            //productTweet.Sentiment = decimal.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
+
+                            interaction.Events.Add(new ProductReviewOutcome(productTweet, DateTime.UtcNow));
+                            client.AddInteraction(interaction);
+                            await client.SubmitAsync();
+                        }
+                        catch (XdbExecutionException ex)
+                        {
+                            // Deal with exception
+                            Logger.LogInformation("Tres Divas Twitter Interactions EnrichmentPipelineProcessor: ", ex);
+                        }
+                    }
+
+
                 }
             }
+
+
+            
         }
     }
 }

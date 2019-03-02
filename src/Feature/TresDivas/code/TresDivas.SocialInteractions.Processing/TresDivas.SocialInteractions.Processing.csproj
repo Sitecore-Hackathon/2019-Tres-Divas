@@ -211,6 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Filters.cs" />
     <Compile Include="Twitter\Pipelines\EnrichmentPipeline.cs" />
     <Compile Include="Twitter\Pipelines\PostFilteringPipeline.cs" />
     <Compile Include="Twitter\Pipelines\PreFilteringPipeline.cs" />
@@ -224,6 +225,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Foundation\Models\code\Foundation.Models\Foundation.Models.csproj">
+      <Project>{493386c1-041a-465b-9812-91059cd4fce1}</Project>
+      <Name>Foundation.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Feature.Marketing\Feature.Marketing.csproj">
       <Project>{90402741-2570-4409-bcc2-9cd291e603d1}</Project>
       <Name>Feature.Marketing</Name>
