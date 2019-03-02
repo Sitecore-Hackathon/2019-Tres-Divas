@@ -18,8 +18,8 @@ namespace TresDivas.Website
 
             routes.MapRoute(
                 name: "ByHashtag",
-                url: "{controller}/{action}/{hashtag}",
-                defaults: new { controller = "TwitterFilterApi", action = "GetTwitterFilterByHashtag", hashtag = UrlParameter.Optional}
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "TwitterFilterApi", action = "GetTwitterFilterByHashtag", id = UrlParameter.Optional}
             );
         }
     }

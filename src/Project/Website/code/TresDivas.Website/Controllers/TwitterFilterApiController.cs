@@ -1,10 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using Glass.Mapper.Sc;
 using Sitecore.Configuration;
 using Sitecore.Data;
 using Sitecore.Data.Items;
+using Sitecore.Diagnostics;
 using TresDivas.Website.Models;
+using TresDivas.Website.Models.sitecore.templates.Feature.Tres_Divas.Marketing;
 
 namespace TresDivas.Website.Controllers
 {
@@ -38,8 +42,15 @@ namespace TresDivas.Website.Controllers
 
         [HttpGet]
         // GET: Twitter Filter By Hashtag
-        public JsonResult GetTwitterFilterByHashtag(string hashtag)
+        public JsonResult GetTwitterFilterByHashtag(string id)
         {
+            if (string.IsNullOrEmpty(id))
+            {
+                throw new Exception("Wee need hashtag passed in.");
+            }
+            
+            var hashtag = id.ToLowerInvariant();
+            
 
             if (!hashtag.StartsWith("#"))
             {
@@ -72,7 +83,7 @@ namespace TresDivas.Website.Controllers
 
         private List<Twitter_UT_Filters> GetFilters()
         {
-            var db = Factory.GetDatabase("master");
+            var db = Factory.GetDatabase("web");
 
             var listingParentItem = db.GetItem(new ID(TwitterFilterParentGuid));
 
@@ -86,14 +97,17 @@ namespace TresDivas.Website.Controllers
 
                 if (item.TemplateID != new ID(FilterTemplateGuid)) continue;
 
+                SitecoreService sitecoreService = new SitecoreService(db);
 
-                listing.Product_Name = item.Fields["Product Name"].Value;
-                listing.Channel = item.Fields["Channel"].Value;
-                listing.Goal_Or_Outcome = item.Fields["Goal or Outcome"].Value;
-                listing.Product_Hashtag = item.Fields["Product Hashtag"].Value;
-                listing.Twitter_Account_Age = item.Fields["Twitter Account Age"].Value;
-                listing.Minimum_Followers = item.Fields["Minimum Followers"].Value;
-                listing.Filter_Out_Retweets = item.Fields["Filter Out Retweets"]?.Value == "1";
+                var model = sitecoreService.GetItem<Twitter_UT_Filters>(item);
+                
+                listing.Product_Name = model.Product_Name;
+                listing.Channel = model.Channel;
+                listing.Goal_Or_Outcome = model.Goal_Or_Outcome;
+                listing.Product_Hashtag = model.Product_Hashtag;
+                listing.Twitter_Account_Age = model.Twitter_Account_Age;
+                listing.Minimum_Followers = model.Minimum_Followers;
+                listing.Filter_Out_Retweets = model.Filter_Out_Retweets;
 
                 fullList.Add(listing);
             }
