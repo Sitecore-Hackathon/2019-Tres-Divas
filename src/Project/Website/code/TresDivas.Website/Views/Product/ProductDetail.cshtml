@@ -1,7 +1,26 @@
-﻿
-@{
-    ViewBag.Title = "ProductDetail";
-}
+﻿@using Sitecore.Mvc;
+@using System.Web.Mvc.Html
+@using Glass.Mapper.Sc.Web.Mvc
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules.Product_Details>
 
-<h2>ProductDetail</h2>
+@if (Model != null)
+{
+    <div class="container">
+        <div class="row">
+            <h1>@Html.Raw(Editable(Model, x => x.Product_Name))</h1>
+        </div>
+        <div class="row">
+
+            <div class="col-md-6">
+                @RenderImage(Model, x => x.Product_Image, new { title = Model.Product_Image.Title, alt = Model.Product_Image.Alt }, isEditable: true)
+            </div>
+            <div class="col-md-6">
+                <p> <b>Bagel Function:</b> @Html.Raw(Editable(Model, x => x.Bagel_Function))</p>
+                <p> <b>Shade Selection:</b> @Html.Raw(Editable(Model, x => x.Shade_Selection))</p>
+                <p> <b>Extra Lift: </b> @Html.Raw(Editable(Model, x => x.Extra_Lift))</p>
+                <b>Description:</b> @Html.Raw(Editable(Model, x => x.Description))
+            </div>
+        </div>
+    </div>
+}
 
