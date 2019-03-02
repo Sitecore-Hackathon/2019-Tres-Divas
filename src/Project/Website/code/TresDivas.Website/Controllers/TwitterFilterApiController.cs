@@ -6,8 +6,6 @@ using Glass.Mapper.Sc;
 using Sitecore.Configuration;
 using Sitecore.Data;
 using Sitecore.Data.Items;
-using Sitecore.Diagnostics;
-using TresDivas.Website.Models;
 using TresDivas.Website.Models.sitecore.templates.Feature.Tres_Divas.Marketing;
 
 namespace TresDivas.Website.Controllers
@@ -46,7 +44,7 @@ namespace TresDivas.Website.Controllers
         {
             if (string.IsNullOrEmpty(id))
             {
-                throw new Exception("Wee need hashtag passed in.");
+                throw new Exception("Wee needz hashtag passed in.");
             }
             
             var hashtag = id.ToLowerInvariant();

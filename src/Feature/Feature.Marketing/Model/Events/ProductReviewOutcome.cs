@@ -28,5 +28,7 @@ namespace Feature.Marketing.Model.Events
         public string Tweet { get; set; }
 
         public decimal Sentiment { get; set; }
+
+        public string TwitterHandle { get; set; }
     }
 }
