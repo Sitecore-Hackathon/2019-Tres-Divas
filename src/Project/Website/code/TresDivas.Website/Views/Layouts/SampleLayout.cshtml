@@ -1,20 +1,41 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@using Sitecore.Mvc;
+@inherits WebViewPage
+@{
+    Layout = null;
+}
+
+<!-- START: ~/Views/Layouts/SampleLayout.cshtml -->
+<!DOCTYPE html>
+<!--[if IE 9]><html lang="en" class="ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="@Sitecore.Context.Language.CultureInfo.TwoLetterISOLanguageName">
+<!--<![endif]-->
 <head>
-    <title>Sample Page</title>
+    @Html.Sitecore().Placeholder("Analytics")
+
+    @Html.Sitecore().Placeholder("Metadata")
+
+    <script src="https://use.fonticons.com/d59627ac.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/82/css/styles.css" />
+    <script src="/assets/82/js/common-bundle.js" type="text/javascript"></script>
+    <script src="/assets/82/js/Main-bundle.js" type="text/javascript"></script>
+
 </head>
-<body>
-    <div class="header">
-        @Html.Sitecore().Placeholder("Header")
+<body class="@(Sitecore.Context.PageMode.IsNormal ? "" : (Sitecore.Context.PageMode.IsExperienceEditor ? "pagemode-edit" : "pagemode-preview"))">
+    @Html.Sitecore().Placeholder("AnalyticsNoScript")
+    @Html.Sitecore().Placeholder("MobileNavigation")
+    <div class="wrap slideout-panel">
+        <section class="top">
+            @Html.Sitecore().Placeholder("Top")
+            @Html.Sitecore().Placeholder("Navigation")
+        </section>
+        <section class="center">
+            @Html.Sitecore().Placeholder("Body")
+        </section>
+        <section class="bottom">
+            @Html.Sitecore().Placeholder("Bottom")
+        </section>
     </div>
-
-    <div class="Body">
-        @Html.Sitecore().Placeholder("Body")
-
-    </div>
-
-    <div class="footer">
-        @Html.Sitecore().Placeholder("Footer")
-    </div>
+    @Html.Sitecore().Placeholder("Scripts")
 </body>
 </html>
