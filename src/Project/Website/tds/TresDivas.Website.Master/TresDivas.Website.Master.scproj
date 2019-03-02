@@ -22,16 +22,23 @@
     <ManageRoles>False</ManageRoles>
     <SitecoreDatabase>master</SitecoreDatabase>
     <AssemblyStatus>Exclude</AssemblyStatus>
+    <EnableCodeGeneration>True</EnableCodeGeneration>
+    <FieldsForCodeGen>Title,Blob,Shared,Unversioned,Default value,Validation,ValidationText,__Long description,__Short description,__Display name,__Hidden,__Read Only,__Sortorder</FieldsForCodeGen>
+    <CodeGenTargetProject>TresDivas.Website</CodeGenTargetProject>
+    <CodeGenFile>Models/TDSClasses.cs</CodeGenFile>
+    <BaseNamespace>Models</BaseNamespace>
+    <BaseTransformFile>glassv3item.tt</BaseTransformFile>
+    <HeaderTransformFile>glassv3header.tt</HeaderTransformFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>.\bin\Debug\</OutputPath>
     <RecursiveDeployAction>Ignore</RecursiveDeployAction>
-    <SitecoreWebUrl>http://ut.hackathon.com</SitecoreWebUrl>
+    <SitecoreWebUrl>http://sc9101.sc/</SitecoreWebUrl>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
     <DisableFileDeployment>False</DisableFileDeployment>
     <LightningDeployMode>False</LightningDeployMode>
-    <SitecoreDeployFolder>C:\inetpub\wwwroot\ut.hackathon.com</SitecoreDeployFolder>
+    <SitecoreDeployFolder>C:\inetpub\wwwroot\sc9101.sc</SitecoreDeployFolder>
     <SitecoreAccessGuid>8821a0f6-2ab5-4be6-93a2-129ff0e664f3</SitecoreAccessGuid>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -52,6 +59,15 @@
       <Project>{112c57e8-d74f-4608-b2f0-aed035638fd3}</Project>
       <Name>TresDivas.Website</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeGenTemplate Include="Code Generation Templates\generalextensions.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\glassv3header.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\glassv3item.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\helpers.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\inflector.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\itempaths.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\stringextensions.tt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" Condition="Exists('$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets')" />
 </Project>
