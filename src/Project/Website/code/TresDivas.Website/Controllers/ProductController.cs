@@ -1,14 +1,17 @@
-﻿using Glass.Mapper.Sc.Web.Mvc;
+﻿using Feature.Marketing.Model.Events;
+using Feature.Marketing.Model.Facets;
+using Foundation.Models;
+using Glass.Mapper.Sc.Web.Mvc;
 using Sitecore.Mvc.Presentation;
+using Sitecore.XConnect;
+using Sitecore.XConnect.Client;
+using Sitecore.XConnect.Client.Configuration;
+using Sitecore.XConnect.Collection.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using TresDivas.Website.Cogitive;
-using Microsoft.Azure.CognitiveServices.Language.TextAnalytics;
-using Microsoft.Azure.CognitiveServices.Language.TextAnalytics.Models;
-using Foundation.Models;
 using Product_Reviews = Foundation.Models.Product_Reviews;
 
 namespace TresDivas.Website.Controllers
@@ -23,75 +26,128 @@ namespace TresDivas.Website.Controllers
             {
                 datasource = MvcContext.GetDataSourceItem<Product_Details>();
             }
-           
+
             return View(Views.Detail);
         }
         // GET: Product Reviews
         public ActionResult Reviews()
         {
-            Product_Reviews datasource;
+            Product_Reviews datasource = new Product_Reviews();
 
-            if (!string.IsNullOrWhiteSpace(RenderingContext.Current?.Rendering?.DataSource))
+            var product = MvcContext.GetDataSourceItem<Product_Details>();
+
+            if (product == null) return null;
+
+            
+            List<Review> allReviews = GetProductReviewsByHastag(product.Product_HashTag);
+
+            List<Review> posReviews = new List<Review>();
+            List<Review> neutralReviews = new List<Review>();
+            List<Review> negativeReviews = new List<Review>();
+
+            foreach (var review in allReviews)
             {
-                datasource = MvcContext.GetDataSourceItem<Product_Reviews>();
-                if(datasource.ReviewsOfProduct != null && datasource.ReviewsOfProduct.Any())
+                if (review != null)
                 {
-                    //If there are any reviews on xconnect or sitecore, push a call to cognitive services to get back sentiment on each review
-                    ITextAnalyticsClient client = new TextAnalyticsClient(new ApiKeyServiceClientCredentials())
+                    if (review.SentimentFromCognitive > ApiKeyServiceClientCredentials.positiveMinThreshhold &&
+                        review.SentimentFromCognitive < ApiKeyServiceClientCredentials.positiveThreshhold)
                     {
-                        Endpoint = "https://westus.api.cognitive.microsoft.com"
-                    };
-                    List<Review> posReviews = new List<Review>();
-                    List<Review> neutralReviews = new List<Review>();
-                    List<Review> negativeReviews = new List<Review>();
-
-                    foreach (var review in datasource.ReviewsOfProduct)
-                    {
-                        if(review != null)
-                        {
-                            SentimentBatchResult result = client.SentimentAsync(
-                    new MultiLanguageBatchInput(
-                        new List<MultiLanguageInput>()
-                        {
-                          new MultiLanguageInput("en", review.Id.ToString(), review.Review_Text)                         
-                        })).Result;
-
-                            if(result != null && result.Documents.Any())
-                            {
-                                var firstDocument = result.Documents.First();
-                                if(firstDocument != null)
-                                {
-                                    review.SentimentFromCognitive = firstDocument.Score;
-                                    
-
-                                    if(review.SentimentFromCognitive > ApiKeyServiceClientCredentials.positiveMinThreshhold && review.SentimentFromCognitive < ApiKeyServiceClientCredentials.positiveThreshhold)
-                                    {
-                                        posReviews.Add(review);
-                                    }
-                                    if (review.SentimentFromCognitive > ApiKeyServiceClientCredentials.negativeMinThreshold && review.SentimentFromCognitive < ApiKeyServiceClientCredentials.negativeThreshold)
-                                    {
-                                        negativeReviews.Add(review);
-                                    }
-                                    if (review.SentimentFromCognitive > ApiKeyServiceClientCredentials.neutralMinThreshhold && review.SentimentFromCognitive < ApiKeyServiceClientCredentials.neutralThreshold)
-                                    {
-                                        neutralReviews.Add(review);
-                                    }
-
-                                }
-                            }
-
-                        }
+                        posReviews.Add(review);
                     }
 
-                    //Assign bucketed reviews here 
-                    datasource.PostiveReviews = posReviews;
-                    datasource.NegativeReviews = negativeReviews;
-                    datasource.NeutralReviews = neutralReviews;
+                    if (review.SentimentFromCognitive > ApiKeyServiceClientCredentials.negativeMinThreshold &&
+                        review.SentimentFromCognitive < ApiKeyServiceClientCredentials.negativeThreshold)
+                    {
+                        negativeReviews.Add(review);
+                    }
+
+                    if (review.SentimentFromCognitive > ApiKeyServiceClientCredentials.neutralMinThreshhold &&
+                        review.SentimentFromCognitive < ApiKeyServiceClientCredentials.neutralThreshold)
+                    {
+                        neutralReviews.Add(review);
+                    }
                 }
-                return View(Views.Reviews, datasource);
             }
-          
-            return View(Views.Reviews);
+
+            //Assign bucketed reviews here 
+            datasource.PostiveReviews = posReviews;
+            datasource.NegativeReviews = negativeReviews;
+            datasource.NeutralReviews = neutralReviews;
+
+            return View(Views.Reviews, datasource);
+        }
+
+        private List<Review> GetProductReviewsByHastag(string hashtag)
+        {
+            var pertinentReviews = new List<Review>();
+
+            Contact result;
+
+            using (XConnectClient client = SitecoreXConnectClientConfiguration.GetClient())
+            {
+
+                var enumerator = client.Contacts.Where(c => c.Identifiers.Any(s => s.Source == "twitter")).GetBatchEnumeratorSync(100);
+
+                try
+                {
+                    while (enumerator.MoveNext())
+                    {
+                        // Cycle through batch of 100
+                        if (enumerator.Current == null) continue;
+
+                        foreach (Contact contact in enumerator.Current)
+                        {
+                            if (contact.Id == null) continue;
+
+                            Guid contactIdentifier = (Guid)contact.Id;
+
+                            result = client.Get<Contact>(new ContactReference(contactIdentifier), new ContactExpandOptions(PersonalInformation.DefaultFacetKey, TwitterAccountInfo.DefaultFacetKey)
+                            {
+                                Interactions = new RelatedInteractionsExpandOptions(LocaleInfo.DefaultFacetKey)
+                                {
+                                    StartDateTime = DateTime.MinValue,
+                                    EndDateTime = DateTime.UtcNow,
+                                    Limit = 30
+                                }
+                            });
+
+                            if (result == null) continue;
+
+                            var newReview = new Review();
+
+                            var interactions = result.Interactions;
+
+                            foreach (var interaction in interactions)
+                            {
+                                foreach (var evt in interaction.Events)
+                                {
+
+                                    if (evt.GetType() != typeof(ProductReviewOutcome)) continue;
+
+                                    var tweetAboutProd = (ProductReviewOutcome)evt;
+
+                                    var review = tweetAboutProd.ProductTweet;
+
+                                    if (review == null) continue;
+
+                                    if (review.ProductHashtag != hashtag.ToLowerInvariant()) continue;
+
+                                    newReview.Review_Text = review.Tweet;
+                                    newReview.Twitter_Handle = review.TwitterHandle;
+                                    newReview.SentimentFromCognitive = review.Sentiment;
+                                }
+
+                                pertinentReviews.Add(newReview);
+                            }
+                        }
+                    }
+                }
+                catch (XdbExecutionException ex)
+                {
+                    // Manage exceptions
+                }
+            }
+            return pertinentReviews;
         }
 
         protected static class Views
@@ -105,5 +161,5 @@ namespace TresDivas.Website.Controllers
 
     }
 
-   
+
 }
