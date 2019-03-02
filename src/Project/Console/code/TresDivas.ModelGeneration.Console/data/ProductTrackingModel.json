@@ -52,7 +52,10 @@
           "Type": "String"
         },
         "Sentiment": {
-          "Type": "Decimal"
+          "Type": "Double?"
+        },
+        "TwitterHandle": {
+          "Type": "String"
         }
       }
     },

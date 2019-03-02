@@ -8,9 +8,6 @@ using Sitecore.Configuration;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 
-
-
-
 namespace TresDivas.Website.Controllers
 {
     public class TwitterFilterApiController : Controller
@@ -47,7 +44,7 @@ namespace TresDivas.Website.Controllers
         {
             if (string.IsNullOrEmpty(id))
             {
-                throw new Exception("Wee need hashtag passed in.");
+                throw new Exception("Wee needz hashtag passed in.");
             }
             
             var hashtag = id.ToLowerInvariant();

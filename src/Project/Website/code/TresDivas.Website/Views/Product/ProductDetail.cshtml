@@ -18,9 +18,6 @@
                 @RenderImage(Model, x => x.Product_Image, new { title = Model.Product_Image.Title, alt = Model.Product_Image.Alt }, isEditable: true)
             </div>
             <div class="col-md-6">
-                
-                <p> <b>Shade Selection:</b> @Html.Raw(Editable(Model, x => x.Shade_Selection))</p>
-               
                 <b>Description:</b> @Html.Raw(Editable(Model, x => x.Description))
             </div>
         </div>
