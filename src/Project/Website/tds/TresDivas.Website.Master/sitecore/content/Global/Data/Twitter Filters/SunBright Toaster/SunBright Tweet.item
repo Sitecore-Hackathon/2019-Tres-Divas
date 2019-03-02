@@ -1,0 +1,73 @@
+----item----
+version: 1
+id: {42739956-0282-4581-BBBA-66DCEE367650}
+database: master
+path: /sitecore/content/Global/Data/Twitter Filters/SunBright Toaster/SunBright Tweet
+parent: {DD68F88B-93B5-4622-AC62-EC2DCB77EAFB}
+name: SunBright Tweet
+master: {00000000-0000-0000-0000-000000000000}
+template: {E0FA547F-F051-4C50-987D-083F43C8543A}
+templatekey: Twitter UT Filters
+created: 20190301T232502Z
+
+----version----
+language: en
+version: 1
+revision: 1bad6010-fe4e-4c59-ba1a-11ad276e18f1
+
+----field----
+field: {15E8F258-7B1F-4ED9-9269-971E76C6726A}
+name: Product Name
+key: product name
+content-length: 17
+
+SunBright Toaster
+----field----
+field: {0CBFF226-2922-423C-85B3-BAA946350044}
+name: Goal Or Outcome
+key: goal or outcome
+content-length: 38
+
+{0370A334-23D3-4002-9B7E-F09C571FD9C5}
+----field----
+field: {BE20ECDD-C11E-4335-9F32-F6E846FFEBEF}
+name: Product Hashtag
+key: product hashtag
+content-length: 17
+
+#sunbrighttoaster
+----field----
+field: {C95E2975-A9F3-46DE-A1AB-8D25F330A9AF}
+name: Minimum Followers
+key: minimum followers
+content-length: 1
+
+0
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20190301T232502Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1bad6010-fe4e-4c59-ba1a-11ad276e18f1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20190301T234257Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

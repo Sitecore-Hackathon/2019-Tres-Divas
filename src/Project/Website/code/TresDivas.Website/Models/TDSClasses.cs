@@ -361,6 +361,244 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Pages
 	}
 
 }
+namespace TresDivas.Website.Models.sitecore.templates.Feature.Tres_Divas.Marketing
+{
+
+
+ 	/// <summary>
+	/// ITwitter_UT_Filters Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Feature/Tres Divas/Marketing/Twitter UT Filters</para>	
+	/// <para>ID: e0fa547f-f051-4c50-987d-083f43c8543a</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ITwitter_UT_FiltersConstants.TemplateIdString )] //, Cachable = true
+	public partial interface ITwitter_UT_Filters : IGlassBase 
+	{
+			
+					/// <summary>
+					/// The Channel field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: 5b913a2a-0c3f-4892-b98e-05702124bc03</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITwitter_UT_FiltersConstants.ChannelFieldName)]
+					Guid Channel  {get; set;}
+			
+			
+					/// <summary>
+					/// The Filter Out Retweets field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 86c1108a-d3a3-4fe9-ac1d-c9c4cc394c14</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITwitter_UT_FiltersConstants.Filter_Out_RetweetsFieldName)]
+					bool Filter_Out_Retweets  {get; set;}
+			
+			
+					/// <summary>
+					/// The Goal Or Outcome field.
+					/// <para></para>
+					/// <para>Field Type: Droptree</para>		
+					/// <para>Field ID: 0cbff226-2922-423c-85b3-baa946350044</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITwitter_UT_FiltersConstants.Goal_Or_OutcomeFieldName)]
+					Guid Goal_Or_Outcome  {get; set;}
+			
+			
+					/// <summary>
+					/// The Minimum Followers field.
+					/// <para>What is the minimum number of followers a Twitter Account must have?</para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: c95e2975-a9f3-46de-a1ab-8d25f330a9af</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITwitter_UT_FiltersConstants.Minimum_FollowersFieldName)]
+					string Minimum_Followers  {get; set;}
+			
+			
+					/// <summary>
+					/// The Product Hashtag field.
+					/// <para>(include #)</para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: be20ecdd-c11e-4335-9f32-f6e846ffebef</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITwitter_UT_FiltersConstants.Product_HashtagFieldName)]
+					string Product_Hashtag  {get; set;}
+			
+			
+					/// <summary>
+					/// The Product Name field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 15e8f258-7b1f-4ed9-9269-971e76c6726a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITwitter_UT_FiltersConstants.Product_NameFieldName)]
+					string Product_Name  {get; set;}
+			
+			
+					/// <summary>
+					/// The Twitter Account Age field.
+					/// <para>What is the minimum age of the Twitter Account?  (in months)</para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 4225cd64-0541-402e-a711-8f52613ef35f</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ITwitter_UT_FiltersConstants.Twitter_Account_AgeFieldName)]
+					string Twitter_Account_Age  {get; set;}
+			
+			
+	}
+
+
+	public static partial class ITwitter_UT_FiltersConstants{
+
+			public const string TemplateIdString = "e0fa547f-f051-4c50-987d-083f43c8543a";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Twitter UT Filters";
+
+		
+			
+			public static readonly ID ChannelFieldId = new ID("5b913a2a-0c3f-4892-b98e-05702124bc03");
+			public const string ChannelFieldName = "Channel";
+			
+		
+			
+			public static readonly ID Filter_Out_RetweetsFieldId = new ID("86c1108a-d3a3-4fe9-ac1d-c9c4cc394c14");
+			public const string Filter_Out_RetweetsFieldName = "Filter Out Retweets";
+			
+		
+			
+			public static readonly ID Goal_Or_OutcomeFieldId = new ID("0cbff226-2922-423c-85b3-baa946350044");
+			public const string Goal_Or_OutcomeFieldName = "Goal Or Outcome";
+			
+		
+			
+			public static readonly ID Minimum_FollowersFieldId = new ID("c95e2975-a9f3-46de-a1ab-8d25f330a9af");
+			public const string Minimum_FollowersFieldName = "Minimum Followers";
+			
+		
+			
+			public static readonly ID Product_HashtagFieldId = new ID("be20ecdd-c11e-4335-9f32-f6e846ffebef");
+			public const string Product_HashtagFieldName = "Product Hashtag";
+			
+		
+			
+			public static readonly ID Product_NameFieldId = new ID("15e8f258-7b1f-4ed9-9269-971e76c6726a");
+			public const string Product_NameFieldName = "Product Name";
+			
+		
+			
+			public static readonly ID Twitter_Account_AgeFieldId = new ID("4225cd64-0541-402e-a711-8f52613ef35f");
+			public const string Twitter_Account_AgeFieldName = "Twitter Account Age";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Twitter_UT_Filters
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Feature/Tres Divas/Marketing/Twitter UT Filters</para>	
+	/// <para>ID: e0fa547f-f051-4c50-987d-083f43c8543a</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ITwitter_UT_FiltersConstants.TemplateIdString)] //, Cachable = true
+	public partial class Twitter_UT_Filters  : GlassBase, ITwitter_UT_Filters
+	{
+	   
+		
+				/// <summary>
+				/// The Channel field.
+				/// <para></para>
+				/// <para>Field Type: Droptree</para>		
+				/// <para>Field ID: 5b913a2a-0c3f-4892-b98e-05702124bc03</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ITwitter_UT_FiltersConstants.ChannelFieldName)]
+				public virtual Guid Channel  {get; set;}
+					
+		
+				/// <summary>
+				/// The Filter Out Retweets field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 86c1108a-d3a3-4fe9-ac1d-c9c4cc394c14</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ITwitter_UT_FiltersConstants.Filter_Out_RetweetsFieldName)]
+				public virtual bool Filter_Out_Retweets  {get; set;}
+					
+		
+				/// <summary>
+				/// The Goal Or Outcome field.
+				/// <para></para>
+				/// <para>Field Type: Droptree</para>		
+				/// <para>Field ID: 0cbff226-2922-423c-85b3-baa946350044</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ITwitter_UT_FiltersConstants.Goal_Or_OutcomeFieldName)]
+				public virtual Guid Goal_Or_Outcome  {get; set;}
+					
+		
+				/// <summary>
+				/// The Minimum Followers field.
+				/// <para>What is the minimum number of followers a Twitter Account must have?</para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: c95e2975-a9f3-46de-a1ab-8d25f330a9af</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ITwitter_UT_FiltersConstants.Minimum_FollowersFieldName)]
+				public virtual string Minimum_Followers  {get; set;}
+					
+		
+				/// <summary>
+				/// The Product Hashtag field.
+				/// <para>(include #)</para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: be20ecdd-c11e-4335-9f32-f6e846ffebef</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ITwitter_UT_FiltersConstants.Product_HashtagFieldName)]
+				public virtual string Product_Hashtag  {get; set;}
+					
+		
+				/// <summary>
+				/// The Product Name field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 15e8f258-7b1f-4ed9-9269-971e76c6726a</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ITwitter_UT_FiltersConstants.Product_NameFieldName)]
+				public virtual string Product_Name  {get; set;}
+					
+		
+				/// <summary>
+				/// The Twitter Account Age field.
+				/// <para>What is the minimum age of the Twitter Account?  (in months)</para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 4225cd64-0541-402e-a711-8f52613ef35f</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ITwitter_UT_FiltersConstants.Twitter_Account_AgeFieldName)]
+				public virtual string Twitter_Account_Age  {get; set;}
+					
+			
+	}
+
+}
 namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Pages
 {
 
