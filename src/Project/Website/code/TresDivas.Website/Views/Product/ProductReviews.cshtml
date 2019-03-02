@@ -20,7 +20,7 @@
                     @RenderImage(review, x => x.Twitter_Image, new { title = review.Twitter_Image.Title, alt = review.Twitter_Image.Alt }, isEditable: true)
                     <p><span>@Html.Raw(Editable(review, x => x.Twitter_Handle))</span> @Html.Raw(Editable(review, x => x.Twitter_Description))</p>
                     <p>@Html.Raw(Editable(review, x => x.Review_Text))</p>
-                    <p>@Html.Raw(Editable(review, x => x.Sentiment))</p>
+                    <p>@Html.Raw(Editable(review, x => x.SentimentFromCognitive))</p>
                 </div>
             }
         }
