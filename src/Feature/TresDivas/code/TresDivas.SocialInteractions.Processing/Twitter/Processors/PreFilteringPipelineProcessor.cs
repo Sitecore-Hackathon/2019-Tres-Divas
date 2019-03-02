@@ -17,7 +17,7 @@ namespace TresDivas.SocialInteractions.Processing.Twitter.Processors
             // Retweets 
             // Number of followers 
             Logger.LogInformation("Tres Divas Twitter Interactions PreFilteringPipelineProcessor: " + arg.ProcessingResult.Interaction.Interaction.Id);
-
+            var events = arg.ProcessingResult.Interaction.Interaction.Events;
             return Task.FromResult(arg);
         }
     }
