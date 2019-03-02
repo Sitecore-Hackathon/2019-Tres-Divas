@@ -4,6 +4,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #pragma warning disable 1591
 #pragma warning disable 0108
 //------------------------------------------------------------------------------
@@ -26,6 +43,7 @@ using Sitecore.Globalization;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using SystemSpecialized = System.Collections.Specialized;
+
 
 
 namespace TresDivas.Website.Models
@@ -104,7 +122,8 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 	[SitecoreType(TemplateId=IProduct_DetailsConstants.TemplateIdString )] //, Cachable = true
 	public partial interface IProduct_Details : IGlassBase 
 	{
-								/// <summary>
+			
+					/// <summary>
 					/// The Bagel Function field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -114,7 +133,8 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 					[SitecoreField(IProduct_DetailsConstants.Bagel_FunctionFieldName)]
 					string Bagel_Function  {get; set;}
 			
-								/// <summary>
+			
+					/// <summary>
 					/// The Description field.
 					/// <para></para>
 					/// <para>Field Type: Multi-Line Text</para>		
@@ -124,7 +144,8 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 					[SitecoreField(IProduct_DetailsConstants.DescriptionFieldName)]
 					string Description  {get; set;}
 			
-								/// <summary>
+			
+					/// <summary>
 					/// The Extra Lift field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -134,7 +155,8 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 					[SitecoreField(IProduct_DetailsConstants.Extra_LiftFieldName)]
 					string Extra_Lift  {get; set;}
 			
-								/// <summary>
+			
+					/// <summary>
 					/// The Product Image field.
 					/// <para></para>
 					/// <para>Field Type: Image</para>		
@@ -144,7 +166,8 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 					[SitecoreField(IProduct_DetailsConstants.Product_ImageFieldName)]
 					Image Product_Image  {get; set;}
 			
-								/// <summary>
+			
+					/// <summary>
 					/// The Product Name field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -154,7 +177,8 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 					[SitecoreField(IProduct_DetailsConstants.Product_NameFieldName)]
 					string Product_Name  {get; set;}
 			
-								/// <summary>
+			
+					/// <summary>
 					/// The Shade Selection field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -164,7 +188,8 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 					[SitecoreField(IProduct_DetailsConstants.Shade_SelectionFieldName)]
 					string Shade_Selection  {get; set;}
 			
-				}
+			
+	}
 
 
 	public static partial class IProduct_DetailsConstants{
@@ -173,27 +198,33 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "Product Details";
 
-					
+		
+			
 			public static readonly ID Bagel_FunctionFieldId = new ID("b9c46a24-959a-41fd-a697-65c341a132f1");
 			public const string Bagel_FunctionFieldName = "Bagel Function";
 			
-					
+		
+			
 			public static readonly ID DescriptionFieldId = new ID("0f663071-efe6-4c41-b09b-ff5137d7b379");
 			public const string DescriptionFieldName = "Description";
 			
-					
+		
+			
 			public static readonly ID Extra_LiftFieldId = new ID("e7971b67-73c0-4bf3-a3fd-d2a85a226ef7");
 			public const string Extra_LiftFieldName = "Extra Lift";
 			
-					
+		
+			
 			public static readonly ID Product_ImageFieldId = new ID("db0e3e15-dc51-4075-865a-0084c20c854d");
 			public const string Product_ImageFieldName = "Product Image";
 			
-					
+		
+			
 			public static readonly ID Product_NameFieldId = new ID("8a69926f-388a-4296-83a6-454c1fb2359d");
 			public const string Product_NameFieldName = "Product Name";
 			
-					
+		
+			
 			public static readonly ID Shade_SelectionFieldId = new ID("5972527d-0e03-4f55-9bc4-9b707896a1c2");
 			public const string Shade_SelectionFieldName = "Shade Selection";
 			
@@ -212,7 +243,8 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 	public partial class Product_Details  : GlassBase, IProduct_Details
 	{
 	   
-						/// <summary>
+		
+				/// <summary>
 				/// The Bagel Function field.
 				/// <para></para>
 				/// <para>Field Type: Single-Line Text</para>		
@@ -223,7 +255,8 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 				[SitecoreField(IProduct_DetailsConstants.Bagel_FunctionFieldName)]
 				public virtual string Bagel_Function  {get; set;}
 					
-						/// <summary>
+		
+				/// <summary>
 				/// The Description field.
 				/// <para></para>
 				/// <para>Field Type: Multi-Line Text</para>		
@@ -234,7 +267,8 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 				[SitecoreField(IProduct_DetailsConstants.DescriptionFieldName)]
 				public virtual string Description  {get; set;}
 					
-						/// <summary>
+		
+				/// <summary>
 				/// The Extra Lift field.
 				/// <para></para>
 				/// <para>Field Type: Single-Line Text</para>		
@@ -245,7 +279,8 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 				[SitecoreField(IProduct_DetailsConstants.Extra_LiftFieldName)]
 				public virtual string Extra_Lift  {get; set;}
 					
-						/// <summary>
+		
+				/// <summary>
 				/// The Product Image field.
 				/// <para></para>
 				/// <para>Field Type: Image</para>		
@@ -256,7 +291,8 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 				[SitecoreField(IProduct_DetailsConstants.Product_ImageFieldName)]
 				public virtual Image Product_Image  {get; set;}
 					
-						/// <summary>
+		
+				/// <summary>
 				/// The Product Name field.
 				/// <para></para>
 				/// <para>Field Type: Single-Line Text</para>		
@@ -267,7 +303,8 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 				[SitecoreField(IProduct_DetailsConstants.Product_NameFieldName)]
 				public virtual string Product_Name  {get; set;}
 					
-						/// <summary>
+		
+				/// <summary>
 				/// The Shade Selection field.
 				/// <para></para>
 				/// <para>Field Type: Single-Line Text</para>		
@@ -280,6 +317,7 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 					
 			
 	}
+
 }
 namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Pages
 {
@@ -294,7 +332,8 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Pages
 	[SitecoreType(TemplateId=IProduct_DetailConstants.TemplateIdString )] //, Cachable = true
 	public partial interface IProduct_Detail : IGlassBase 
 	{
-				}
+			
+	}
 
 
 	public static partial class IProduct_DetailConstants{
@@ -320,6 +359,7 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Pages
 	   
 			
 	}
+
 }
 namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Pages
 {
@@ -334,7 +374,8 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Pages
 	[SitecoreType(TemplateId=IHomeConstants.TemplateIdString )] //, Cachable = true
 	public partial interface IHome : IGlassBase 
 	{
-				}
+			
+	}
 
 
 	public static partial class IHomeConstants{
@@ -360,4 +401,5 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Pages
 	   
 			
 	}
+
 }
