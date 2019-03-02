@@ -2,7 +2,7 @@
 version: 1
 id: {2B734ADB-C0F1-45D7-96BC-09F0F1EC7734}
 database: master
-path: /sitecore/content/Home/Sunbright Toaster
+path: /sitecore/content/TresDivas/Home/Sunbright Toaster
 parent: {110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}
 name: Sunbright Toaster
 master: {00000000-0000-0000-0000-000000000000}
