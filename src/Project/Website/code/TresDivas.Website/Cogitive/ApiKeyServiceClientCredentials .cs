@@ -18,6 +18,14 @@ namespace TresDivas.Website.Cogitive
                 request.Headers.Add("Ocp-Apim-Subscription-Key", SubscriptionKey);
                 return base.ProcessHttpRequestAsync(request, cancellationToken);
             }
-        
+
+        public static double positiveMinThreshhold = 0.8;
+        public static double positiveThreshhold = 1;
+        public static double negativeMinThreshold = 0;
+        public static double negativeThreshold = 0.2;
+        public static double neutralMinThreshhold = 0.3;
+        public static double neutralThreshold = 0.5;
+
+
     }
 }

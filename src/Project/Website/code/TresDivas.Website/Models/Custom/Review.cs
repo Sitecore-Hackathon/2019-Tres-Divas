@@ -4,6 +4,7 @@
     {
         
         public virtual double? SentimentFromCognitive { get; set; }
+        
     }
     
 }

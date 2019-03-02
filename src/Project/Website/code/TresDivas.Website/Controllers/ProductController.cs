@@ -9,6 +9,7 @@ using TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules;
 using TresDivas.Website.Cogitive;
 using Microsoft.Azure.CognitiveServices.Language.TextAnalytics;
 using Microsoft.Azure.CognitiveServices.Language.TextAnalytics.Models;
+using TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Content;
 
 namespace TresDivas.Website.Controllers
 {
@@ -29,6 +30,7 @@ namespace TresDivas.Website.Controllers
         public ActionResult Reviews()
         {
             Product_Reviews datasource;
+
             if (!string.IsNullOrWhiteSpace(RenderingContext.Current?.Rendering?.DataSource))
             {
                 datasource = MvcContext.GetDataSourceItem<Product_Reviews>();
@@ -39,7 +41,10 @@ namespace TresDivas.Website.Controllers
                     {
                         Endpoint = "https://westus.api.cognitive.microsoft.com"
                     };
-                    
+                    List<Review> posReviews = new List<Review>();
+                    List<Review> neutralReviews = new List<Review>();
+                    List<Review> negativeReviews = new List<Review>();
+
                     foreach (var review in datasource.ReviewsOfProduct)
                     {
                         if(review != null)
@@ -57,11 +62,31 @@ namespace TresDivas.Website.Controllers
                                 if(firstDocument != null)
                                 {
                                     review.SentimentFromCognitive = firstDocument.Score;
+                                    
+
+                                    if(review.SentimentFromCognitive > ApiKeyServiceClientCredentials.positiveMinThreshhold && review.SentimentFromCognitive < ApiKeyServiceClientCredentials.positiveThreshhold)
+                                    {
+                                        posReviews.Add(review);
+                                    }
+                                    if (review.SentimentFromCognitive > ApiKeyServiceClientCredentials.negativeMinThreshold && review.SentimentFromCognitive < ApiKeyServiceClientCredentials.negativeThreshold)
+                                    {
+                                        negativeReviews.Add(review);
+                                    }
+                                    if (review.SentimentFromCognitive > ApiKeyServiceClientCredentials.neutralMinThreshhold && review.SentimentFromCognitive < ApiKeyServiceClientCredentials.neutralThreshold)
+                                    {
+                                        neutralReviews.Add(review);
+                                    }
+
                                 }
                             }
 
                         }
                     }
+
+                    //Assign bucketed reviews here 
+                    datasource.PostiveReviews = posReviews;
+                    datasource.NegativeReviews = negativeReviews;
+                    datasource.NeutralReviews = neutralReviews;
                 }
                 return View(Views.Reviews, datasource);
             }

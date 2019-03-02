@@ -1,0 +1,94 @@
+----item----
+version: 1
+id: {2C6B328D-F10A-4FAA-BA09-5B37379AAA75}
+database: master
+path: /sitecore/content/Global/Modules/Reviews/Toaster Reviews/Ross Galore
+parent: {67078216-BAAF-4025-AFAB-13A9108D0BFE}
+name: Ross Galore
+master: {00000000-0000-0000-0000-000000000000}
+template: {D1643D84-F19B-428F-82DB-12C361288351}
+templatekey: Review
+created: 20190302T185406Z
+
+----version----
+language: en
+version: 1
+revision: a19411c9-8945-4bf4-916c-89e27bd8c0ff
+
+----field----
+field: {E5A224F3-347F-4756-92D4-DE254CCB1383}
+name: Review Text
+key: review text
+content-length: 19
+
+I hate this toaster
+----field----
+field: {6F8B7882-A3EA-409C-97CC-4ABF2DEC2226}
+name: Sentiment
+key: sentiment
+content-length: 3
+
+1.0
+----field----
+field: {162A8603-E5A5-4810-92A0-F68DFD0C46E9}
+name: Twitter Handle
+key: twitter handle
+content-length: 8
+
+@rgalore
+----field----
+field: {C58C6ADA-9AD6-4EC2-9406-B5957AD0E6B8}
+name: Twitter Image
+key: twitter image
+content-length: 58
+
+<image mediaid="{875F9CA3-6E24-480A-A0D6-D58573EF3EB9}" />
+----field----
+field: {32E18C18-E507-46C2-8959-52B89BB1EB82}
+name: Twitter Description
+key: twitter description
+content-length: 18
+
+Product Enthusiast
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20190302T152258Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a19411c9-8945-4bf4-916c-89e27bd8c0ff
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20190302T185424Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

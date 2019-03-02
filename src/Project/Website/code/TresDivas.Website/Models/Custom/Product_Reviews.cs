@@ -11,6 +11,10 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
     {
         [SitecoreChildren(InferType = true)]
         public virtual IEnumerable<Review> ReviewsOfProduct { get; set; }
+
+        public virtual List<Review> PostiveReviews { get; set; }
+        public virtual List<Review> NeutralReviews { get; set; }
+        public virtual List<Review> NegativeReviews { get; set; }
     }
     
 }
