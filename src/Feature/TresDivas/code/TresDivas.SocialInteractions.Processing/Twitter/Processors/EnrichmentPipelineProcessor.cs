@@ -6,11 +6,17 @@ using Sitecore.XConnect.Schema;
 using Sitecore.Xdb.Common.Web;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using Feature.Marketing.Model.Collection;
 using Feature.Marketing.Model.Events;
 using Feature.Marketing.Model.Facets;
+using Microsoft.Azure.CognitiveServices.Language.TextAnalytics;
+using Microsoft.Azure.CognitiveServices.Language.TextAnalytics.Models;
 using Microsoft.Extensions.Logging;
+using Microsoft.Rest;
 using Sitecore.Tracking.Processing.Abstractions.Pipelines;
 
 namespace TresDivas.SocialInteractions.Processing.Twitter.Processors
@@ -108,11 +114,28 @@ namespace TresDivas.SocialInteractions.Processing.Twitter.Processors
                             var productTweet = new ProductTweet();
                             productTweet.Tweet = tweetfulltext;
                             productTweet.ProductHashtag = hashtag;
-                            //TODO : Uncomment
-                            //productTweet.TwitterHandle = twitterHandle;
+                            productTweet.TwitterHandle = twitterHandle;
 
-                            //TODO : Cognitive API Call from Deepthi's code
-                            //productTweet.Sentiment = decimal.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
+                            ITextAnalyticsClient cogClient = new TextAnalyticsClient(new ApiKeyServiceClientCredentials())
+                            {
+                                Endpoint = "https://westus.api.cognitive.microsoft.com"
+                            };
+
+                            SentimentBatchResult result = cogClient.SentimentAsync(
+                                new MultiLanguageBatchInput(
+                                    new List<MultiLanguageInput>()
+                                    {
+                                        new MultiLanguageInput("en", new Guid().ToString(), productTweet.Tweet)
+                                    })).Result;
+
+                            if (result != null && result.Documents.Any())
+                            {
+                                var firstDocument = result.Documents.First();
+                                if (firstDocument != null)
+                                {
+                                    productTweet.Sentiment = firstDocument.Score;
+                                }
+                            }
 
                             interaction.Events.Add(new ProductReviewOutcome(productTweet, DateTime.UtcNow));
                             client.AddInteraction(interaction);
@@ -132,5 +155,20 @@ namespace TresDivas.SocialInteractions.Processing.Twitter.Processors
 
             
         }
+    }
+
+    public class ApiKeyServiceClientCredentials : ServiceClientCredentials
+    {
+        private const string SubscriptionKey = "33292a7a07c84bad88e8a132ca1f3eb7";
+
+        public override Task ProcessHttpRequestAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        {
+            request.Headers.Add("Ocp-Apim-Subscription-Key", SubscriptionKey);
+            return base.ProcessHttpRequestAsync(request, cancellationToken);
+        }
+
+        
+
+
     }
 }
