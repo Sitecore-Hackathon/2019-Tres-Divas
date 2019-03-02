@@ -40,9 +40,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TresDivas.Website", "src\Pr
 EndProject
 Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "TresDivas.Website.Master", "src\Project\Website\tds\TresDivas.Website.Master\TresDivas.Website.Master.scproj", "{79CB38A5-4944-4069-A2EC-DF3D3B9F3CBA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feature.Marketing", "Feature.Marketing", "{09148B3B-8605-4300-95B9-B6B1BD6C5C40}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feature.Marketing", "src\Feature\Feature.Marketing\Feature.Marketing.csproj", "{90402741-2570-4409-BCC2-9CD291E603D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feature.Marketing.ModelGeneration", "src\Feature\Feature.Marketing.ModelGeneration\Feature.Marketing.ModelGeneration\Feature.Marketing.ModelGeneration.csproj", "{4A78B139-ABED-4B7E-9531-409E286C5474}"
+	ProjectSection(ProjectDependencies) = postProject
+		{90402741-2570-4409-BCC2-9CD291E603D1} = {90402741-2570-4409-BCC2-9CD291E603D1}
+	EndProjectSection
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TresDivas", "TresDivas", "{1DCF7A54-5FF4-4EAD-853D-96BB81029A25}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TresDivas.SocialInteractions.Processing", "src\Feature\TresDivas\code\TresDivas.SocialInteractions.Processing\TresDivas.SocialInteractions.Processing.csproj", "{8F3D7141-25B9-4E15-8574-0CC337C54A09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TresDivas.ModelGeneration.Console", "src\Project\Console\code\TresDivas.ModelGeneration.Console\TresDivas.ModelGeneration.Console.csproj", "{807171B4-685F-4B07-B259-A49747425FB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,10 +75,22 @@ Global
 		{79CB38A5-4944-4069-A2EC-DF3D3B9F3CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79CB38A5-4944-4069-A2EC-DF3D3B9F3CBA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{79CB38A5-4944-4069-A2EC-DF3D3B9F3CBA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{90402741-2570-4409-BCC2-9CD291E603D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90402741-2570-4409-BCC2-9CD291E603D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90402741-2570-4409-BCC2-9CD291E603D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90402741-2570-4409-BCC2-9CD291E603D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A78B139-ABED-4B7E-9531-409E286C5474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A78B139-ABED-4B7E-9531-409E286C5474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A78B139-ABED-4B7E-9531-409E286C5474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A78B139-ABED-4B7E-9531-409E286C5474}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8F3D7141-25B9-4E15-8574-0CC337C54A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8F3D7141-25B9-4E15-8574-0CC337C54A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F3D7141-25B9-4E15-8574-0CC337C54A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F3D7141-25B9-4E15-8574-0CC337C54A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807171B4-685F-4B07-B259-A49747425FB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807171B4-685F-4B07-B259-A49747425FB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807171B4-685F-4B07-B259-A49747425FB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807171B4-685F-4B07-B259-A49747425FB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,11 +102,15 @@ Global
 		{C1C13197-67A8-4082-A35D-934C35830920} = {15D97D61-D597-42EC-B7E9-E9EC8130E630}
 		{112C57E8-D74F-4608-B2F0-AED035638FD3} = {C1C13197-67A8-4082-A35D-934C35830920}
 		{79CB38A5-4944-4069-A2EC-DF3D3B9F3CBA} = {C1C13197-67A8-4082-A35D-934C35830920}
+		{09148B3B-8605-4300-95B9-B6B1BD6C5C40} = {17DD5718-6E13-4F2C-9738-B410396D4552}
+		{90402741-2570-4409-BCC2-9CD291E603D1} = {09148B3B-8605-4300-95B9-B6B1BD6C5C40}
+		{4A78B139-ABED-4B7E-9531-409E286C5474} = {09148B3B-8605-4300-95B9-B6B1BD6C5C40}
 		{1DCF7A54-5FF4-4EAD-853D-96BB81029A25} = {17DD5718-6E13-4F2C-9738-B410396D4552}
 		{8F3D7141-25B9-4E15-8574-0CC337C54A09} = {1DCF7A54-5FF4-4EAD-853D-96BB81029A25}
+		{807171B4-685F-4B07-B259-A49747425FB9} = {6D7C7500-9309-4380-A40D-6BFBFFE54AA1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Caching.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.ServiceBus.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Configuration.6.0.1304.0\lib\NET45
 		SolutionGuid = {311DA37D-528B-43B2-A99B-E7253F841D46}
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Caching.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.ServiceBus.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Configuration.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal

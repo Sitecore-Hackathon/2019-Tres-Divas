@@ -10,11 +10,17 @@ namespace TresDivas.Website
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             // Sitecore will handle this route.
-            //routes.MapRoute(
-            //    name: "Default",
-            //    url: "{controller}/{action}/{id}",
-            //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            //);
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}",
+                defaults: new { controller = "TwitterFilterApi", action = "Index"}
+            );
+
+            routes.MapRoute(
+                name: "ByHashtag",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "TwitterFilterApi", action = "GetTwitterFilterByHashtag", id = UrlParameter.Optional}
+            );
         }
     }
 }
