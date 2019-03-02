@@ -125,13 +125,16 @@
     <Reference Include="Sitecore.Web, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\..\packages\Sitecore.Web.9.1.0\lib\net471\Sitecore.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.XConnect">
-      <HintPath>..\..\..\..\..\lib\Sitecore.XConnect.dll</HintPath>
+    <Reference Include="Sitecore.XConnect, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Sitecore.XConnect.9.1.0\lib\netstandard2.0\Sitecore.XConnect.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.XConnect.Client">
-      <HintPath>..\..\..\..\..\lib\Sitecore.XConnect.Client.dll</HintPath>
+    <Reference Include="Sitecore.XConnect.Client, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Sitecore.XConnect.Client.9.1.0\lib\netstandard2.0\Sitecore.XConnect.Client.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.XConnect.Client.Configuration">
+    <Reference Include="Sitecore.XConnect.Client.Configuration, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\lib\Sitecore.XConnect.Client.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.XConnect.Collection.Model">
@@ -222,10 +225,12 @@
     <Compile Include="Classes\ExperienceProfile\SocialTabBuilder.cs" />
     <Compile Include="Classes\ExperienceProfile\TabBuilderBase.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\TwitterFilterApiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\TDSClasses.cs" />
+    <Compile Include="Models\Twitter_UT_Filters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
