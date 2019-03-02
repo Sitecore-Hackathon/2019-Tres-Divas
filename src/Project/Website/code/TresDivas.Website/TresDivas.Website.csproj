@@ -229,8 +229,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Custom\Product_Reviews.cs" />
-    <Compile Include="Models\TDSClasses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -271,6 +269,10 @@
     <ProjectReference Include="..\..\..\..\Feature\Feature.Marketing\Feature.Marketing.csproj">
       <Project>{90402741-2570-4409-bcc2-9cd291e603d1}</Project>
       <Name>Feature.Marketing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Foundation\Models\code\Foundation.Models\Foundation.Models.csproj">
+      <Project>{493386c1-041a-465b-9812-91059cd4fce1}</Project>
+      <Name>Foundation.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules;
+using Foundation.Models;
+using Product_Reviews = Foundation.Models.Custom.Product_Reviews;
 
 namespace TresDivas.Website.Controllers
 {
