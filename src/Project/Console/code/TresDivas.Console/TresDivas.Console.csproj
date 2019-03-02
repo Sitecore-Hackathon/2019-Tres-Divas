@@ -141,9 +141,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Website\code\TresDivas.Website\TresDivas.Website.csproj">
-      <Project>{112c57e8-d74f-4608-b2f0-aed035638fd3}</Project>
-      <Name>TresDivas.Website</Name>
+    <ProjectReference Include="..\..\..\..\Foundation\Models\code\Foundation.Models\Foundation.Models.csproj">
+      <Project>{493386c1-041a-465b-9812-91059cd4fce1}</Project>
+      <Name>Foundation.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

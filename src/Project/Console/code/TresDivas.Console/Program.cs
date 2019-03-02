@@ -8,8 +8,8 @@ using Tweetinvi;
 using Tweetinvi.Models;
 using System.Linq;
 using System.Net;
+using Foundation.Models;
 using Newtonsoft.Json;
-using TresDivas.Website.Models.sitecore.templates.Feature.Tres_Divas.Marketing;
 using Tweetinvi.Core.Extensions;
 using Stream = Tweetinvi.Stream;
 
@@ -29,7 +29,7 @@ namespace TresDivas.Console
             //string channelId = "6d3d2374-af56-44fe-b99a-20843b440b58";
             string channelId = "6d3d2374-af56-44fe-b99a-20843b440b58"; // Channel Id of the channel: /sitecore/system/Marketing Control Panel/Taxonomies/Channel/Online/Social community/Twitter social community
             //string definitionId = "55555555-d662-4a87-beee-413307055c48";
-            string definitionId = "ff1d9360-8a31-4779-ad1a-d4a8178b865a"; // Goal definitionId of the goal: /sitecore/system/Marketing Control Panel/Goals/Sandbox/Twitter Hackathon
+            string eventDefinitionId = "ff1d9360-8a31-4779-ad1a-d4a8178b865a"; // Goal definitionId of the goal: /sitecore/system/Marketing Control Panel/Goals/Sandbox/Twitter Hackathon
 
             Auth.SetUserCredentials(TwitterApiKey, TwitterApiSecretKey, TwitterAccessToken, TwitterAccessTokenSecret);
             var user = User.GetAuthenticatedUser();
@@ -46,7 +46,7 @@ namespace TresDivas.Console
             var stream = Stream.CreateFilteredStream();
 
             //stream.AddTrack("\ud83d\udd25"); //fire emoji
-            hashTags.ForEach(ht=> stream.AddTrack(ht));
+            hashTags.ForEach(ht => stream.AddTrack(ht));
             stream.AddTweetLanguageFilter(LanguageFilter.English);
 
             System.Console.WriteLine("I am listening to Twitter for Product Hashtags:" + hashtagString + "...");
@@ -116,14 +116,12 @@ namespace TresDivas.Console
                         dict.Add("tweetFullText", tweetFullText);
                         dict.Add("isRetweet", isRetweet.ToString());
                         dict.Add("isVerified", isVerified.ToString());
-
-                        var eventRequest = UTRequestBuilder.OutcomeWithDefenitionId(definitionId) // outcome id
+                        var eventRequest = UTRequestBuilder.EventWithDefenitionId(eventDefinitionId)
                             .Timestamp(DateTime.Now)
                             .AddCustomValues(dict)
-                            .EngagementValue(305)
                             .Text(theTweet.FullText)
                             .Build();
-                        var eventResponse = session.TrackOutcomeEventAsync(eventRequest);
+                        var eventResponse = session.TrackEventAsync(eventRequest);
                         System.Console.WriteLine("Track EVENT RESULT: " + eventResponse.Result.StatusCode);
                     }
                 }
@@ -164,7 +162,7 @@ namespace TresDivas.Console
     {
         public FiltersResponse()
         {
-            Response= new List<Twitter_UT_Filters>();
+            Response = new List<Twitter_UT_Filters>();
         }
 
         public List<Twitter_UT_Filters> Response { get; set; }
