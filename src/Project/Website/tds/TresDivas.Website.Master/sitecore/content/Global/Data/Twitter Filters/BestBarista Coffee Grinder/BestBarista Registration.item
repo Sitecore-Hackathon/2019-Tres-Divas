@@ -1,0 +1,80 @@
+----item----
+version: 1
+id: {D1DF7215-3A68-4E4A-A7AF-33E985D4DB07}
+database: master
+path: /sitecore/content/Global/Data/Twitter Filters/BestBarista Coffee Grinder/BestBarista Registration
+parent: {457AFE6A-F1F0-45C6-B4EA-8E5B32154369}
+name: BestBarista Registration
+master: {00000000-0000-0000-0000-000000000000}
+template: {E0FA547F-F051-4C50-987D-083F43C8543A}
+templatekey: Twitter UT Filters
+created: 20190228T144346Z
+
+----version----
+language: en
+version: 1
+revision: e80ce0f7-ee1e-437e-9ccd-909fd24b0cdb
+
+----field----
+field: {15E8F258-7B1F-4ED9-9269-971E76C6726A}
+name: Product Name
+key: product name
+content-length: 26
+
+BestBarista Coffee Grinder
+----field----
+field: {5B913A2A-0C3F-4892-B98E-05702124BC03}
+name: Channel
+key: channel
+content-length: 38
+
+{6D3D2374-AF56-44FE-B99A-20843B440B58}
+----field----
+field: {0CBFF226-2922-423C-85B3-BAA946350044}
+name: Goal Or Outcome
+key: goal or outcome
+content-length: 38
+
+{7C555FBF-71D3-4D89-BC85-23F919733D08}
+----field----
+field: {BE20ECDD-C11E-4335-9F32-F6E846FFEBEF}
+name: Product Hashtag
+key: product hashtag
+content-length: 25
+
+#bestbaristacoffeegrinder
+----field----
+field: {C95E2975-A9F3-46DE-A1AB-8D25F330A9AF}
+name: Minimum Followers
+key: minimum followers
+content-length: 1
+
+0
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20190228T144346Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e80ce0f7-ee1e-437e-9ccd-909fd24b0cdb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20190301T234246Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

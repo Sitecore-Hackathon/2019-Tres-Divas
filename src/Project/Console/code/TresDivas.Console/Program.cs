@@ -46,24 +46,32 @@ namespace TresDivas.Console
                 var hashtags = theTweet.Hashtags.ToList();
                 var hashtagString = string.Join(", ", hashtags);
 
-                // emoji troubleshooting below ...
-                //Encoding ascii = Encoding.ASCII;
-                //Encoding unicode = Encoding.Unicode;
+                // Name
+                var name = theTweet.CreatedBy.UserDTO.Name;
 
-                //// Convert the string into a byte array.
-                //byte[] unicodeBytes = unicode.GetBytes(theTweet.FullText);
+                // Name
+                var twitterHandle = theTweet.CreatedBy.UserDTO.ScreenName;
 
-                //// Perform the conversion from one encoding to the other.
-                //byte[] asciiBytes = Encoding.Convert(unicode, ascii, unicodeBytes);
+                // Number of followers
+                var followersCount = theTweet.CreatedBy.UserDTO.FollowersCount;
 
-                //// Convert the new byte[] into a char[] and then into a string.
-                //char[] asciiChars = new char[ascii.GetCharCount(asciiBytes, 0, asciiBytes.Length)];
-                //ascii.GetChars(asciiBytes, 0, asciiBytes.Length, asciiChars, 0);
-                //string asciiString = new string(asciiChars);
+                // Account Description
+                var twitterHandleDescription = theTweet.CreatedBy.UserDTO.Description;
 
-                //// Display the strings created before and after the conversion.
-                //Console.WriteLine("Original string: {0}", theTweet.Text);
-                //Console.WriteLine("Ascii converted string: {0}", asciiString);
+                // Created At - Account
+                var twitterHandleCreated = theTweet.CreatedBy.UserDTO.CreatedAt;
+
+                // Tweet Full Text
+                var tweetFullText = theTweet.FullText;
+
+                // Quoted Tweet
+                var quotedTweet = theTweet.QuotedTweet.FullText;
+
+                // Is Retweet
+                var isRetweet = theTweet.IsRetweet;
+
+                // var verified
+                var isVerified = theTweet.CreatedBy.Verified;
 
                 System.Console.WriteLine(theTweet.FullText);
                 System.Console.WriteLine(hashtagString);
@@ -91,6 +99,15 @@ namespace TresDivas.Console
 
                         dict.Add("twitterHandle", "@" + theTweet.CreatedBy.UserIdentifier.ScreenName);
                         dict.Add("hashtags", "here: " + hashtagString);
+                        dict.Add("name", name);
+                        dict.Add("twitterHandle", twitterHandle);
+                        dict.Add("followersCount", followersCount.ToString());
+                        dict.Add("twitterHandleDescription", twitterHandleDescription);
+                        dict.Add("twitterHandleCreated", twitterHandleCreated.ToShortDateString());
+                        dict.Add("tweetFullText", tweetFullText);
+                        dict.Add("quotedTweet", quotedTweet);
+                        dict.Add("isRetweet", isRetweet.ToString());
+                        dict.Add("isVerified", isVerified.ToString());
 
                         var eventRequest = UTRequestBuilder.PageViewWithDefenitionId(definitionId)
                             .Timestamp(DateTime.Now)
