@@ -1,16 +1,44 @@
 # Documentation
 
-The documentation for this years Hackathon must be provided as a readme in Markdown format as part of your submission. 
-
-You can find a very good reference to Github flavoured markdown reference in [this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). If you want something a bit more WYSIWYG for editing then could use [StackEdit](https://stackedit.io/app) which provides a more user friendly interface for generating the Markdown code. Those of you who are [VS Code fans](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview) can edit/preview directly in that interface too.
-
-Examples of things to include are the following.
+The purpose of this module is to revolutionize the way product reviews are submitted and to provide a way to aggregate all reviews for a product in one place. Currently, product reviews can be found scattered across various resellers of the product with little or no sharing.
+Using Twitter tweets as a backdrop, we propose that reviews be submitted directly to the manufacturer.
 
 ## Summary
 
-**Category:** Hackathon Category
+**Category:** Best Use of Universal Tracker
 
 What is the purpose of your module? What problem does it solve and how does it do that?
+
+Usually the product reviews are scattered across and it is usually hard to aggregate them.  The purpose of this module is to solve the aggregation problem by providing specific twitter hash tag for the product.
+This can then we used by the end user to tweet about the product.  We then have a listener that listens to the tweets and pushes the events to Universal tracker. 
+The journey of the information/event will continue to go to XConnect and an outcome is created. Outcomes are identified by twitter handle and carry information about the tweet and sentiment. 
+
+In our example, we consider a example of a Best kitchen with three products and three unique hashtags one for each. 
+
+BestBarista Coffee Grinder = #bestbaristacoffeegrinder
+PerfectSmoothie Blender = #perfectsmoothieblender
+SunBright Toaster = #sunbrighttoaster
+
+We hear for live tweets flowing with these hashtags and capture the interactions and outcomes to solve the problem of scattered reviews.
+What we also do is leverage Universal tracker ability to filter out tweets that are not 
+
+Currently, we are looking for below settings to determine if a tweet is important enough to be considered as interaction.  These settings are stored on Sitecore to ensure this idea can be extended.
+
+- Age of Twitter account
+- Minimum number of followers
+- Is it a retweet or no?
+
+On the aggregation side of things, we believe as with any reviews the end user is interested in understanding how the product is overall. 
+Here it gets important to showcase the reviews bucketing them in to positive, neutral or negative.  We leveraged Text Analyzer from Microsoft [direct link](https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/) Cognitive Services to get the Sentiment and came up with ranges based on Sentiment that we think would determine where the review fits.
+
+Ranges Defined currently and potentially can be modified with help of data science behind them
+
+
+Postive Range  = { 0.8, 1}
+Negative Range = {0, 0.2}
+Neutral Range = {0.2, 0.5}
+         
+         
 
 ## Pre-requisites
 
