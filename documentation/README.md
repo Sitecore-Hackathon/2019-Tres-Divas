@@ -44,7 +44,7 @@ Ranges Defined currently and potentially can be modified with help of data scien
 
 Does your module rely on other Sitecore modules or frameworks?
 
-- Sitecore 9.1 
+- Sitecore 9.1 - Ensure all pre-requisites for 9.1 are in check [direct link](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/91/Sitecore_Experience_Platform_91_Initial_Release.aspx)
 - Installation of Universal Tracker 
 - To Avoid any modifications of config files and patches please name your sitecore instance as ut.hackathon.com
 
@@ -61,43 +61,31 @@ Provide detailed instructions on how to install the module, and include screensh
 
 ## Configuration
 
-How do you configure your module once it is installed? Are there items that need to be updated with settings, or maybe config files need to have keys updated?
+The below steps would be needed to ensure the solution works 
 
-Remember you are using Markdown, you can provide code samples too:
 - Take the file located and checked in under 2019-Tres-Divas\src\Project\Console\code\TresDivas.ModelGeneration.Console\data and drop in to below locations under your website directories
     --C:\inetpub\wwwroot\hackathon.xconnect\App_Data\jobs\continuous\IndexWorker\App_data\Models
     --C:\inetpub\wwwroot\hackathon.xconnect\App_Data\Models
 - Go to below project under location 2019-Tres-Divas\src\Feature\TresDivas\code\TresDivas.SocialInteractions.Processing 
     -- Update the constants.cs and put in the values for XConnectThumbprint and XConnectInstance to match the local values
-```xml
-<?xml version="1.0"?>
-<!--
-  Purpose: Configuration settings for my hackathon module
--->
-<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
-  <sitecore>
-    <settings>
-      <setting name="MyModule.Setting" value="Hackathon" />
-    </settings>
-  </sitecore>
-</configuration>
+    -- Reference below
 ```
+namespace TresDivas.SocialInteractions.Processing
+{
+    public class Constants
+    {
+        public const string XConnectThumbprint = "D77AAB9D28CBDD254D52DFFB3F32096DAEA05D7B";
+        public const string XConnectInstance = "https://xconnect.ut.hackathon.com";
+    }
+}
+```
+- After this manual steps restart all associated services including xconnect
 
-## Usage
+## About Us 
 
-Provide documentation  about your module, how do the users use your module, where are things located, what do icons mean, are there any secret shortcuts etc.
 
-Please include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
+![TresDivas](images/TresDivas.jpg?raw=true "TresDivas Logo")
 
-![Hackathon Logo](images/hackathon.png?raw=true "Hackathon Logo")
-
-You can embed images of different formats too:
-
-![Deal With It](images/deal-with-it.gif?raw=true "Deal With It")
-
-And you can embed external images too:
-
-![Random](https://placeimg.com/480/240/any "Random")
 
 ## Video
 
