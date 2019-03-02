@@ -1,0 +1,101 @@
+----item----
+version: 1
+id: {DD8ECA55-1951-4999-8A20-304E16491A0E}
+database: master
+path: /sitecore/templates/Feature/Tres Divas/Marketing/Twitter UT Filters/__Standard Values
+parent: {E0FA547F-F051-4C50-987D-083F43C8543A}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {E0FA547F-F051-4C50-987D-083F43C8543A}
+templatekey: Twitter UT Filters
+created: 20190228T143705Z
+
+----version----
+language: en
+version: 1
+revision: 942cf312-2ca3-43c7-87e9-441e85b80b42
+
+----field----
+field: {15E8F258-7B1F-4ED9-9269-971E76C6726A}
+name: Product Name
+key: product name
+content-length: 5
+
+$name
+----field----
+field: {5B913A2A-0C3F-4892-B98E-05702124BC03}
+name: Channel
+key: channel
+content-length: 38
+
+{6D3D2374-AF56-44FE-B99A-20843B440B58}
+----field----
+field: {BE20ECDD-C11E-4335-9F32-F6E846FFEBEF}
+name: Product Hashtag
+key: product hashtag
+content-length: 1
+
+#
+----field----
+field: {4225CD64-0541-402E-A711-8F52613EF35F}
+name: Twitter Account Age
+key: twitter account age
+content-length: 1
+
+0
+----field----
+field: {C95E2975-A9F3-46DE-A1AB-8D25F330A9AF}
+name: Minimum Followers
+key: minimum followers
+content-length: 2
+
+20
+----field----
+field: {86C1108A-D3A3-4FE9-AC1D-C9C4CC394C14}
+name: Filter Out Retweets
+key: filter out retweets
+content-length: 1
+
+1
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20190228T143705Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+942cf312-2ca3-43c7-87e9-441e85b80b42
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20190301T234228Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin
