@@ -1,26 +1,40 @@
 ----item----
 version: 1
-id: {8E8B6BD3-4A88-488C-B6B0-D2308AA7F8D2}
+id: {C58C6ADA-9AD6-4EC2-9406-B5957AD0E6B8}
 database: master
-path: /sitecore/templates/Project/TresDivas/Pages/Product Detail/__Standard Values
-parent: {DD18839A-0567-484A-AE3B-0407E6C4C336}
-name: __Standard Values
+path: /sitecore/templates/Project/TresDivas/Content/Review/Review Detail/Twitter Image
+parent: {DA3E946F-5B38-4E1E-A499-5196215632EC}
+name: Twitter Image
 master: {00000000-0000-0000-0000-000000000000}
-template: {DD18839A-0567-484A-AE3B-0407E6C4C336}
-templatekey: Product Detail
-created: 20190302T041409Z
+template: {455A3E98-A627-4B40-8035-E683A0331AC7}
+templatekey: Template field
+created: 20190302T150058Z
 
 ----field----
-field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
-name: __Renderings
-key: __renderings
-content-length: 355
+field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
+name: Type
+key: type
+content-length: 5
 
-<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{5A0DC4C8-C4DB-4312-9247-6C6FEB579C0E}"><r id="{66541775-82D2-4820-9028-D2E08AF8D69F}" ph="Body" uid="{931FDA77-476F-4EC1-83AE-BF40569D472C}" /><r id="{058FA201-1702-42BF-87C2-D2C97791FE4D}" ph="Body" uid="{18033234-3379-4D4C-A869-5340F87434AC}" /></d></r>
+Image
+----field----
+field: {1EB8AE32-E190-44A6-968D-ED904C794EBF}
+name: Source
+key: source
+content-length: 48
+
+/sitecore/media library/Images/TresDivas/Reviews
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+400
 ----version----
 language: en
 version: 1
-revision: ca4e446a-cd00-4693-affb-b7102ceeffdc
+revision: b421b2ad-20d8-4733-871f-f0dce556f5c8
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -35,7 +49,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20190302T041409Z
+20190302T150058Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -49,14 +63,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ca4e446a-cd00-4693-affb-b7102ceeffdc
+b421b2ad-20d8-4733-871f-f0dce556f5c8
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20190302T150247Z
+20190302T150554Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

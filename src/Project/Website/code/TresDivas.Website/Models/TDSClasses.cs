@@ -319,6 +319,261 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 	}
 
 }
+namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
+{
+
+
+ 	/// <summary>
+	/// IProduct_Reviews Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Project/TresDivas/Modules/Product Reviews</para>	
+	/// <para>ID: c8ce317d-43c1-489f-9471-a318c0e824d4</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IProduct_ReviewsConstants.TemplateIdString )] //, Cachable = true
+	public partial interface IProduct_Reviews : IGlassBase 
+	{
+								/// <summary>
+					/// The Review Description field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: 8c33e703-fdf9-4b4f-9817-3305ff863d91</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IProduct_ReviewsConstants.Review_DescriptionFieldName)]
+					string Review_Description  {get; set;}
+			
+								/// <summary>
+					/// The Reviews Title field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 9f4ed8ac-ec41-48d1-b20e-cba327fce98c</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IProduct_ReviewsConstants.Reviews_TitleFieldName)]
+					string Reviews_Title  {get; set;}
+			
+				}
+
+
+	public static partial class IProduct_ReviewsConstants{
+
+			public const string TemplateIdString = "c8ce317d-43c1-489f-9471-a318c0e824d4";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Product Reviews";
+
+					
+			public static readonly ID Review_DescriptionFieldId = new ID("8c33e703-fdf9-4b4f-9817-3305ff863d91");
+			public const string Review_DescriptionFieldName = "Review Description";
+			
+					
+			public static readonly ID Reviews_TitleFieldId = new ID("9f4ed8ac-ec41-48d1-b20e-cba327fce98c");
+			public const string Reviews_TitleFieldName = "Reviews Title";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Product_Reviews
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Project/TresDivas/Modules/Product Reviews</para>	
+	/// <para>ID: c8ce317d-43c1-489f-9471-a318c0e824d4</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IProduct_ReviewsConstants.TemplateIdString)] //, Cachable = true
+	public partial class Product_Reviews  : GlassBase, IProduct_Reviews
+	{
+	   
+						/// <summary>
+				/// The Review Description field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 8c33e703-fdf9-4b4f-9817-3305ff863d91</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_ReviewsConstants.Review_DescriptionFieldName)]
+				public virtual string Review_Description  {get; set;}
+					
+						/// <summary>
+				/// The Reviews Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 9f4ed8ac-ec41-48d1-b20e-cba327fce98c</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IProduct_ReviewsConstants.Reviews_TitleFieldName)]
+				public virtual string Reviews_Title  {get; set;}
+					
+			
+	}
+}
+namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Content
+{
+
+
+ 	/// <summary>
+	/// IReview Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Project/TresDivas/Content/Review</para>	
+	/// <para>ID: d1643d84-f19b-428f-82db-12c361288351</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IReviewConstants.TemplateIdString )] //, Cachable = true
+	public partial interface IReview : IGlassBase 
+	{
+								/// <summary>
+					/// The Review Text field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: e5a224f3-347f-4756-92d4-de254ccb1383</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IReviewConstants.Review_TextFieldName)]
+					string Review_Text  {get; set;}
+			
+								/// <summary>
+					/// The Sentiment field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 6f8b7882-a3ea-409c-97cc-4abf2dec2226</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IReviewConstants.SentimentFieldName)]
+					string Sentiment  {get; set;}
+			
+								/// <summary>
+					/// The Twitter Description field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 32e18c18-e507-46c2-8959-52b89bb1eb82</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IReviewConstants.Twitter_DescriptionFieldName)]
+					string Twitter_Description  {get; set;}
+			
+								/// <summary>
+					/// The Twitter Handle field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 162a8603-e5a5-4810-92a0-f68dfd0c46e9</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IReviewConstants.Twitter_HandleFieldName)]
+					string Twitter_Handle  {get; set;}
+			
+								/// <summary>
+					/// The Twitter Image field.
+					/// <para></para>
+					/// <para>Field Type: Image</para>		
+					/// <para>Field ID: c58c6ada-9ad6-4ec2-9406-b5957ad0e6b8</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IReviewConstants.Twitter_ImageFieldName)]
+					Image Twitter_Image  {get; set;}
+			
+				}
+
+
+	public static partial class IReviewConstants{
+
+			public const string TemplateIdString = "d1643d84-f19b-428f-82db-12c361288351";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Review";
+
+					
+			public static readonly ID Review_TextFieldId = new ID("e5a224f3-347f-4756-92d4-de254ccb1383");
+			public const string Review_TextFieldName = "Review Text";
+			
+					
+			public static readonly ID SentimentFieldId = new ID("6f8b7882-a3ea-409c-97cc-4abf2dec2226");
+			public const string SentimentFieldName = "Sentiment";
+			
+					
+			public static readonly ID Twitter_DescriptionFieldId = new ID("32e18c18-e507-46c2-8959-52b89bb1eb82");
+			public const string Twitter_DescriptionFieldName = "Twitter Description";
+			
+					
+			public static readonly ID Twitter_HandleFieldId = new ID("162a8603-e5a5-4810-92a0-f68dfd0c46e9");
+			public const string Twitter_HandleFieldName = "Twitter Handle";
+			
+					
+			public static readonly ID Twitter_ImageFieldId = new ID("c58c6ada-9ad6-4ec2-9406-b5957ad0e6b8");
+			public const string Twitter_ImageFieldName = "Twitter Image";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Review
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Project/TresDivas/Content/Review</para>	
+	/// <para>ID: d1643d84-f19b-428f-82db-12c361288351</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IReviewConstants.TemplateIdString)] //, Cachable = true
+	public partial class Review  : GlassBase, IReview
+	{
+	   
+						/// <summary>
+				/// The Review Text field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: e5a224f3-347f-4756-92d4-de254ccb1383</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IReviewConstants.Review_TextFieldName)]
+				public virtual string Review_Text  {get; set;}
+					
+						/// <summary>
+				/// The Sentiment field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 6f8b7882-a3ea-409c-97cc-4abf2dec2226</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IReviewConstants.SentimentFieldName)]
+				public virtual string Sentiment  {get; set;}
+					
+						/// <summary>
+				/// The Twitter Description field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 32e18c18-e507-46c2-8959-52b89bb1eb82</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IReviewConstants.Twitter_DescriptionFieldName)]
+				public virtual string Twitter_Description  {get; set;}
+					
+						/// <summary>
+				/// The Twitter Handle field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 162a8603-e5a5-4810-92a0-f68dfd0c46e9</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IReviewConstants.Twitter_HandleFieldName)]
+				public virtual string Twitter_Handle  {get; set;}
+					
+						/// <summary>
+				/// The Twitter Image field.
+				/// <para></para>
+				/// <para>Field Type: Image</para>		
+				/// <para>Field ID: c58c6ada-9ad6-4ec2-9406-b5957ad0e6b8</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IReviewConstants.Twitter_ImageFieldName)]
+				public virtual Image Twitter_Image  {get; set;}
+					
+			
+	}
+}
 namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Pages
 {
 
