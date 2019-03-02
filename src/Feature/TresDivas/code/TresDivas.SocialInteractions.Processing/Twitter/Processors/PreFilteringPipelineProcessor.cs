@@ -15,7 +15,7 @@ namespace TresDivas.SocialInteractions.Processing.Twitter.Processors
             // Filter out hashtag
             // Age of the account
             // Retweets 
-            // Number of followers
+            // Number of followers 
             Logger.LogInformation("Tres Divas Twitter Interactions PreFilteringPipelineProcessor: " + arg.ProcessingResult.Interaction.Interaction.Id);
 
             return Task.FromResult(arg);
