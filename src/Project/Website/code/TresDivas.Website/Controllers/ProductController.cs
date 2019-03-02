@@ -39,7 +39,7 @@ namespace TresDivas.Website.Controllers
             if (product == null) return null;
 
             
-            List<Review> allReviews = GetProductReviewsByHastag("#sunbright");
+            List<Review> allReviews = GetProductReviewsByHastag(product.Product_HashTag);
 
             List<Review> posReviews = new List<Review>();
             List<Review> neutralReviews = new List<Review>();

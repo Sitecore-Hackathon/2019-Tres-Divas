@@ -13,7 +13,7 @@ namespace TresDivas.ModelGeneration.Console
 
             var serializedModel = Sitecore.XConnect.Serialization.XdbModelWriter.Serialize(model);
 
-            //File.WriteAllText("c:\\temp\\" + model.Name + ".json", serializedModel);
+            File.WriteAllText("c:\\temp\\" + model.Name + ".json", serializedModel);
 
 
 

@@ -1,7 +1,16 @@
 ﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Foundation.Models.Product_Reviews>
 
 
-@if (Model != null)
+@if (Model == null || Model.ReviewsOfProduct == null || !Model.ReviewsOfProduct.Any())
+{
+    <div class="container">
+        <div class="row">
+            <h2>Reviews</h2>
+            <p>Sorry! No Product reviews yet! Tweet a review for this product!</p>
+        </div>
+    </div>
+}
+else
 {
     <div class="container">
         <div class="row">
