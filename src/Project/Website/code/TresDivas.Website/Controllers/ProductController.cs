@@ -23,7 +23,7 @@ namespace TresDivas.Website.Controllers
             {
                 datasource = SitecoreContext.GetCurrentItem<Product_Details>();
             }
-            return View(Views.Detail);
+            return View(Views.Detail, datasource);
         }
         protected static class Views
         {
