@@ -12,7 +12,7 @@ namespace TresDivas.SocialInteractions.Processing.Twitter.Processors
 
         public override Task<PipelineArgs> RunAsync(PipelineArgs arg)
         {
-            Logger.LogInformation("Tres Divas Twitter Interactions PostFilteringPipeline: " + arg.ProcessingResult.Interaction.Interaction.ChannelId);
+            Logger.LogInformation("Tres Divas Twitter Interactions PostFilteringPipelineProcessor: " + arg.ProcessingResult.Interaction.Interaction.ChannelId);
             return Task.FromResult(arg);
         }
     }

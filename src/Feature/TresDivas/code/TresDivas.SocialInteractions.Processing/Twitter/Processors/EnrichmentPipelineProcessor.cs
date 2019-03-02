@@ -14,7 +14,7 @@ namespace TresDivas.SocialInteractions.Processing.Twitter.Processors
         {
             // Are they verified buyers?
             // Build contact
-            Logger.LogInformation("Tres Divas Twitter Interactions EnrichmentPipeline: " + arg.ProcessingResult.Interaction.Interaction.ChannelId);
+            Logger.LogInformation("Tres Divas Twitter Interactions EnrichmentPipelineProcessor: " + arg.ProcessingResult.Interaction.Interaction.ChannelId);
             return Task.FromResult(arg);
         }
     }

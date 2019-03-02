@@ -16,7 +16,8 @@ namespace TresDivas.SocialInteractions.Processing.Twitter.Processors
             // Age of the account
             // Retweets 
             // Number of followers
-            Logger.LogInformation("Tres Divas Twitter Interactions PreFilteringPipeline: " + arg.ProcessingResult.Interaction.Interaction.ChannelId);
+            Logger.LogInformation("Tres Divas Twitter Interactions PreFilteringPipelineProcessor: " + arg.ProcessingResult.Interaction.Interaction.Id);
+
             return Task.FromResult(arg);
         }
     }
