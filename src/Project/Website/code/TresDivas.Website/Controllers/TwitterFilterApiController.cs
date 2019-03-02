@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using Foundation.Models;
 using Glass.Mapper.Sc;
 using Sitecore.Configuration;
 using Sitecore.Data;
 using Sitecore.Data.Items;
-using TresDivas.Website.Models.sitecore.templates.Feature.Tres_Divas.Marketing;
 
 namespace TresDivas.Website.Controllers
 {
