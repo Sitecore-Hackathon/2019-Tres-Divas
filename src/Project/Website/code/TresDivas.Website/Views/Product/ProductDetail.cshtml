@@ -18,9 +18,9 @@
                 @RenderImage(Model, x => x.Product_Image, new { title = Model.Product_Image.Title, alt = Model.Product_Image.Alt }, isEditable: true)
             </div>
             <div class="col-md-6">
-                <p> <b>Bagel Function:</b> @Html.Raw(Editable(Model, x => x.Bagel_Function))</p>
+                
                 <p> <b>Shade Selection:</b> @Html.Raw(Editable(Model, x => x.Shade_Selection))</p>
-                <p> <b>Extra Lift: </b> @Html.Raw(Editable(Model, x => x.Extra_Lift))</p>
+               
                 <b>Description:</b> @Html.Raw(Editable(Model, x => x.Description))
             </div>
         </div>

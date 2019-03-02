@@ -1,0 +1,98 @@
+----item----
+version: 1
+id: {CD063106-AADB-49D7-8760-E997BC8A6E21}
+database: master
+path: /sitecore/content/Global/Modules/Details/PerfectSmoothie
+parent: {1B698B9E-0D2C-415D-B031-17BF4F890FC9}
+name: PerfectSmoothie
+master: {00000000-0000-0000-0000-000000000000}
+template: {13CF5071-F642-4639-AEC7-B45A29C939C4}
+templatekey: Product Details
+created: 20190302T224242Z
+
+----version----
+language: en
+version: 1
+revision: c6339b16-d814-4df8-815b-e96c7634f144
+
+----field----
+field: {8A69926F-388A-4296-83A6-454C1FB2359D}
+name: Product Name
+key: product name
+content-length: 23
+
+PerfectSmoothie Blender
+----field----
+field: {DB0E3E15-DC51-4075-865A-0084C20C854D}
+name: Product Image
+key: product image
+content-length: 58
+
+<image mediaid="{2F2CCCCA-E431-4507-B7BC-B95EF4268296}" />
+----field----
+field: {5972527D-0E03-4F55-9BC4-9B707896A1C2}
+name: Shade Selection
+key: shade selection
+content-length: 14
+
+Black and Grey
+----field----
+field: {0F663071-EFE6-4C41-B09B-FF5137D7B379}
+name: Description
+key: description
+content-length: 870
+
+Powerful Motor and Heavy Duty Blades- 350W pure copper motor, low noise for super-smooth result.
+Break Resistant BPA-FREE Take-Along Cups with Spill / Leakage-Proof Lid and Anti-slip Ring - mini blender with 19/13.5 ounce sport jars with carry hook on sealed lid. Fit for bike & car cup holder, can be used as sport bottles, travel mugs, etc.
+Stainless Steel Base with Non-slip Feet, Space Saved and Elegant Design - The skid resistance feet makes it stays firmly on the kitchen top while blending.Mini size fits right under kitchen cabinets, easy to stock.
+Convenient and Healthy Beverage Maker - The on-the-go blender is fully equipped to make one person portion frozen fruit smoothies,breakfast drinks,iced juices,milkshakes or sports nutrition & protein shakes in just seconds and keep fitness.
+WARRANTY - 2 years worry free warranty, 24hours*7 service available
+----field----
+field: {A0E9565F-44A2-4105-B51F-DBF098B8D891}
+name: Product HashTag
+key: product hashtag
+content-length: 23
+
+#perfectsmoothieblender
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20190302T052950Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c6339b16-d814-4df8-815b-e96c7634f144
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20190302T225043Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

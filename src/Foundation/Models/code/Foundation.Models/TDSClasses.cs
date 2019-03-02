@@ -105,16 +105,6 @@ namespace Foundation.Models
 	public partial interface IProduct_Details : IGlassBase 
 	{
 								/// <summary>
-					/// The Bagel Function field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: b9c46a24-959a-41fd-a697-65c341a132f1</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IProduct_DetailsConstants.Bagel_FunctionFieldName)]
-					string Bagel_Function  {get; set;}
-			
-								/// <summary>
 					/// The Description field.
 					/// <para></para>
 					/// <para>Field Type: Multi-Line Text</para>		
@@ -123,16 +113,6 @@ namespace Foundation.Models
 					/// </summary>
 					[SitecoreField(IProduct_DetailsConstants.DescriptionFieldName)]
 					string Description  {get; set;}
-			
-								/// <summary>
-					/// The Extra Lift field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: e7971b67-73c0-4bf3-a3fd-d2a85a226ef7</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IProduct_DetailsConstants.Extra_LiftFieldName)]
-					string Extra_Lift  {get; set;}
 			
 								/// <summary>
 					/// The Product HashTag field.
@@ -184,16 +164,8 @@ namespace Foundation.Models
 			public const string TemplateName = "Product Details";
 
 					
-			public static readonly ID Bagel_FunctionFieldId = new ID("b9c46a24-959a-41fd-a697-65c341a132f1");
-			public const string Bagel_FunctionFieldName = "Bagel Function";
-			
-					
 			public static readonly ID DescriptionFieldId = new ID("0f663071-efe6-4c41-b09b-ff5137d7b379");
 			public const string DescriptionFieldName = "Description";
-			
-					
-			public static readonly ID Extra_LiftFieldId = new ID("e7971b67-73c0-4bf3-a3fd-d2a85a226ef7");
-			public const string Extra_LiftFieldName = "Extra Lift";
 			
 					
 			public static readonly ID Product_HashTagFieldId = new ID("a0e9565f-44a2-4105-b51f-dbf098b8d891");
@@ -227,17 +199,6 @@ namespace Foundation.Models
 	{
 	   
 						/// <summary>
-				/// The Bagel Function field.
-				/// <para></para>
-				/// <para>Field Type: Single-Line Text</para>		
-				/// <para>Field ID: b9c46a24-959a-41fd-a697-65c341a132f1</para>
-				/// <para>Custom Data: </para>
-				/// </summary>
-				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(IProduct_DetailsConstants.Bagel_FunctionFieldName)]
-				public virtual string Bagel_Function  {get; set;}
-					
-						/// <summary>
 				/// The Description field.
 				/// <para></para>
 				/// <para>Field Type: Multi-Line Text</para>		
@@ -247,17 +208,6 @@ namespace Foundation.Models
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(IProduct_DetailsConstants.DescriptionFieldName)]
 				public virtual string Description  {get; set;}
-					
-						/// <summary>
-				/// The Extra Lift field.
-				/// <para></para>
-				/// <para>Field Type: Single-Line Text</para>		
-				/// <para>Field ID: e7971b67-73c0-4bf3-a3fd-d2a85a226ef7</para>
-				/// <para>Custom Data: </para>
-				/// </summary>
-				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(IProduct_DetailsConstants.Extra_LiftFieldName)]
-				public virtual string Extra_Lift  {get; set;}
 					
 						/// <summary>
 				/// The Product HashTag field.
