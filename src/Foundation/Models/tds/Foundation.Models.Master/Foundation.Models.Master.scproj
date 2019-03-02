@@ -1,0 +1,248 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>ab0d68ab-d3c2-4b4b-b927-ef9f6d839be7</ProjectGuid>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <SourceWebPhysicalPath>
+    </SourceWebPhysicalPath>
+    <SourceWebProject>
+    </SourceWebProject>
+    <SourceWebVirtualPath>
+    </SourceWebVirtualPath>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>Foundation.Models.Master</SingleAssemblyName>
+    <UseWebConfigReplacement>false</UseWebConfigReplacement>
+    <DeleteAppCodeCompiledFiles>true</DeleteAppCodeCompiledFiles>
+    <LegacyFileReplacement>false</LegacyFileReplacement>
+    <AssemblyName>Foundation.Models.Master</AssemblyName>
+    <Name>Foundation.Models.Master</Name>
+    <RootNamespace>Foundation.Models.Master</RootNamespace>
+    <EnableCodeGeneration>True</EnableCodeGeneration>
+    <FieldsForCodeGen>Title,Blob,Shared,Unversioned,Default value,Validation,ValidationText,__Long description,__Short description,__Display name,__Hidden,__Read Only,__Sortorder</FieldsForCodeGen>
+    <CodeGenTargetProject>Foundation.Models</CodeGenTargetProject>
+    <CodeGenFile>TDSClasses.cs</CodeGenFile>
+    <BaseTransformFile>glassv3item.tt</BaseTransformFile>
+    <HeaderTransformFile>glassv3header.tt</HeaderTransformFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+    <EnableValidations>False</EnableValidations>
+    <ValidationSettingsFilePath>.\Foundation.Models.Master_Debug.xml</ValidationSettingsFilePath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttributes Include="AssemblyFileVersion">
+      <Value>$(AssemblyFileVersion)</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(AssemblyVersion)</Value>
+    </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeGenTemplate Include="Code Generation Templates\generalextensions.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\glassv3header.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\glassv3item.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\helpers.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\inflector.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\itempaths.tt" />
+    <CodeGenTemplate Include="Code Generation Templates\stringextensions.tt" />
+  </ItemGroup>
+  <ItemGroup>
+    <SitecoreItem Include="sitecore\templates.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Feature.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Feature\Tres Divas.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Feature\Tres Divas\Marketing.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Feature\Tres Divas\Marketing\Twitter UT Filters.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Feature\Tres Divas\Marketing\Twitter UT Filters\__Standard Values.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Feature\Tres Divas\Marketing\Twitter UT Filters\Content.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Feature\Tres Divas\Marketing\Twitter UT Filters\Content\Channel.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Feature\Tres Divas\Marketing\Twitter UT Filters\Content\Filter Out Retweets.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Feature\Tres Divas\Marketing\Twitter UT Filters\Content\Goal Or Outcome.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Feature\Tres Divas\Marketing\Twitter UT Filters\Content\Minimum Followers.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Feature\Tres Divas\Marketing\Twitter UT Filters\Content\Product Hashtag.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Feature\Tres Divas\Marketing\Twitter UT Filters\Content\Product Name.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Feature\Tres Divas\Marketing\Twitter UT Filters\Content\Twitter Account Age.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation\Helix.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation\Helix\Site.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Content.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Content\Review.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Content\Review\Review Detail.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Content\Review\Review Detail\Review Text.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Content\Review\Review Detail\Sentiment.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Content\Review\Review Detail\Twitter Description.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Content\Review\Review Detail\Twitter Handle.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Content\Review\Review Detail\Twitter Image.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Modules.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Modules\Product Details.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Modules\Product Details\Details Product.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Modules\Product Details\Details Product\Bagel Function.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Modules\Product Details\Details Product\Description.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Modules\Product Details\Details Product\Extra Lift.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Modules\Product Details\Details Product\Product Image.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Modules\Product Details\Details Product\Product Name.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Modules\Product Details\Details Product\Shade Selection.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Modules\Product Reviews.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Modules\Product Reviews\__Standard Values.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Modules\Product Reviews\Reviews Details.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Modules\Product Reviews\Reviews Details\Review Description.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Modules\Product Reviews\Reviews Details\Reviews Title.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Pages.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Pages\Home.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Pages\Home\__Standard Values.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Pages\Product Detail.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Project\TresDivas\Pages\Product Detail\__Standard Values.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" Condition="Exists('$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets')" />
+</Project>

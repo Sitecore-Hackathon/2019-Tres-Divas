@@ -70,6 +70,9 @@
     <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Azure.CognitiveServices.Language.TextAnalytics, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Microsoft.Azure.CognitiveServices.Language.TextAnalytics.2.8.0-preview\lib\net452\Microsoft.Azure.CognitiveServices.Language.TextAnalytics.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\..\packages\Microsoft.Extensions.DependencyInjection.2.1.1\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
@@ -97,6 +100,12 @@
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\..\packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Microsoft.Rest.ClientRuntime.2.3.17\lib\net452\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime.Azure, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Microsoft.Rest.ClientRuntime.Azure.3.3.18\lib\net452\Microsoft.Rest.ClientRuntime.Azure.dll</HintPath>
     </Reference>
     <Reference Include="Mvp.Xml, Version=2.3.0.0, Culture=neutral, PublicKeyToken=6ead800d778c9b9f, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\..\packages\Mvp.Xml.2.3.0\lib\net20\Mvp.Xml.dll</HintPath>
@@ -147,10 +156,13 @@
     <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -224,12 +236,12 @@
     <Compile Include="Classes\ExperienceProfile\ProductInfoTabBuilder.cs" />
     <Compile Include="Classes\ExperienceProfile\SocialTabBuilder.cs" />
     <Compile Include="Classes\ExperienceProfile\TabBuilderBase.cs" />
+    <Compile Include="Cogitive\ApiKeyServiceClientCredentials .cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\TwitterFilterApiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\TDSClasses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -237,6 +249,8 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <Content Include="App_Config\Include\TresDivas.SiteDefinition.config" />
+    <Content Include="App_Config\Include\TresDivas.zCustomWeb.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -255,6 +269,7 @@
     <Content Include="Views\Product\ProductDetail.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Layouts\SampleLayout.cshtml" />
+    <Content Include="Views\Product\ProductReviews.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -269,6 +284,10 @@
     <ProjectReference Include="..\..\..\..\Feature\Feature.Marketing\Feature.Marketing.csproj">
       <Project>{90402741-2570-4409-bcc2-9cd291e603d1}</Project>
       <Name>Feature.Marketing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Foundation\Models\code\Foundation.Models\Foundation.Models.csproj">
+      <Project>{493386c1-041a-465b-9812-91059cd4fce1}</Project>
+      <Name>Foundation.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

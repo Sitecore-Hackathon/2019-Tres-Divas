@@ -1,0 +1,59 @@
+﻿@using Sitecore.Mvc;
+@using System.Web.Mvc.Html
+@using Glass.Mapper.Sc.Web.Mvc
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Foundation.Models.Product_Reviews>
+
+
+@if (Model != null)
+{
+    <div class="container">
+        <div class="row">
+            <h2>@Model.ReviewsOfProduct.Count() @Html.Raw(Editable(Model, x => x.Reviews_Title))</h2>
+            <p>@Html.Raw(Editable(Model, x => x.Review_Description))</p>
+        </div>
+        <div class="row">
+            <h3> Postive Reviews <span>&#128522;</span></h3>
+        </div>
+        @{
+            foreach (var review in Model.PostiveReviews)
+            {
+                <div class="row">
+                    @RenderImage(review, x => x.Twitter_Image, new { title = review.Twitter_Image.Title, alt = review.Twitter_Image.Alt }, isEditable: true)
+                    <p><span>@Html.Raw(Editable(review, x => x.Twitter_Handle))</span> @Html.Raw(Editable(review, x => x.Twitter_Description))</p>
+                    <p>@Html.Raw(Editable(review, x => x.Review_Text))</p>
+                    <p>@Html.Raw(Editable(review, x => x.SentimentFromCognitive))</p>
+                </div>
+            }
+        }
+        <div class="row">
+            <h3>Neutral Reviews <span>&#128528; </span> </h3>
+        </div>
+        @{
+            foreach (var review in Model.NeutralReviews)
+            {
+                <div class="row">
+                    @RenderImage(review, x => x.Twitter_Image, new { title = review.Twitter_Image.Title, alt = review.Twitter_Image.Alt }, isEditable: true)
+                    <p><span>@Html.Raw(Editable(review, x => x.Twitter_Handle))</span> @Html.Raw(Editable(review, x => x.Twitter_Description))</p>
+                    <p>@Html.Raw(Editable(review, x => x.Review_Text))</p>
+                    <p>@Html.Raw(Editable(review, x => x.SentimentFromCognitive))</p>
+                </div>
+            }
+        }
+        <div class="row">
+            <h3> Negative Reviews <span>&#128544</span></h3>
+        </div>
+        @{
+            foreach (var review in Model.NegativeReviews)
+            {
+                <div class="row">
+                    @RenderImage(review, x => x.Twitter_Image, new { title = review.Twitter_Image.Title, alt = review.Twitter_Image.Alt }, isEditable: true)
+                    <p><span>@Html.Raw(Editable(review, x => x.Twitter_Handle))</span> @Html.Raw(Editable(review, x => x.Twitter_Description))</p>
+                    <p>@Html.Raw(Editable(review, x => x.Review_Text))</p>
+                    <p>@Html.Raw(Editable(review, x => x.SentimentFromCognitive))</p>
+                </div>
+            }
+        }
+    </div>
+}
+
+

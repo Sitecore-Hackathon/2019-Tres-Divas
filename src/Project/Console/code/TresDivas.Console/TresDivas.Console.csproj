@@ -140,5 +140,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Foundation\Models\code\Foundation.Models\Foundation.Models.csproj">
+      <Project>{493386c1-041a-465b-9812-91059cd4fce1}</Project>
+      <Name>Foundation.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

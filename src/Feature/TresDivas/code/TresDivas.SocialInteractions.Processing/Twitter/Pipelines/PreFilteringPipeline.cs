@@ -10,8 +10,7 @@ namespace TresDivas.SocialInteractions.Processing.Twitter.Pipelines
 {
     public class PreFilteringPipeline : BasePreFilteringPipeline
     {
-        public PreFilteringPipeline(ILogger<TrackingProcessingPipeline> logger, List<Processor> processors)
-            : base(logger, processors)
+        public PreFilteringPipeline(ILogger<TrackingProcessingPipeline> logger, List<Processor> processors): base(logger, processors)
         {
         }
 

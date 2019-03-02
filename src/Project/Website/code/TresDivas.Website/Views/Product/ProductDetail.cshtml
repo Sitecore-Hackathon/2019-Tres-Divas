@@ -1,16 +1,19 @@
 ﻿@using Sitecore.Mvc;
 @using System.Web.Mvc.Html
 @using Glass.Mapper.Sc.Web.Mvc
-@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules.Product_Details>
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Foundation.Models.Product_Details>
+
 
 @if (Model != null)
 {
     <div class="container">
         <div class="row">
-            <h1>@Html.Raw(Editable(Model, x => x.Product_Name))</h1>
+            <h2>@Html.Raw(Editable(Model, x => x.Product_Name))</h2>
         </div>
         <div class="row">
+        </div>
 
+        <div class="row">
             <div class="col-md-6">
                 @RenderImage(Model, x => x.Product_Image, new { title = Model.Product_Image.Title, alt = Model.Product_Image.Alt }, isEditable: true)
             </div>
