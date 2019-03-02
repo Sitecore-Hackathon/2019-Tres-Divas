@@ -23,7 +23,7 @@ namespace TresDivas.Website.Cogitive
         public static double positiveThreshhold = 1;
         public static double negativeMinThreshold = 0;
         public static double negativeThreshold = 0.2;
-        public static double neutralMinThreshhold = 0.3;
+        public static double neutralMinThreshhold = 0.2;
         public static double neutralThreshold = 0.5;
 
 
