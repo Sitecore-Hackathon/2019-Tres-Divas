@@ -281,6 +281,46 @@ namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 			
 	}
 }
+namespace TresDivas.Website.Models.sitecore.templates.Foundation.Helix
+{
+
+
+ 	/// <summary>
+	/// ISite Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Foundation/Helix/Site</para>	
+	/// <para>ID: 6669dc16-f106-44b5-96be-7a31ae82b5b5</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISiteConstants.TemplateIdString )] //, Cachable = true
+	public partial interface ISite : IGlassBase 
+	{
+				}
+
+
+	public static partial class ISiteConstants{
+
+			public const string TemplateIdString = "6669dc16-f106-44b5-96be-7a31ae82b5b5";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Site";
+
+			
+
+	}
+
+	
+	/// <summary>
+	/// Site
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/Foundation/Helix/Site</para>	
+	/// <para>ID: 6669dc16-f106-44b5-96be-7a31ae82b5b5</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISiteConstants.TemplateIdString)] //, Cachable = true
+	public partial class Site  : GlassBase, ISite
+	{
+	   
+			
+	}
+}
 namespace TresDivas.Website.Models.sitecore.templates.Project.TresDivas.Modules
 {
 
