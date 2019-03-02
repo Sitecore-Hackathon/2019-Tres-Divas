@@ -40,6 +40,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TresDivas.Website", "src\Pr
 EndProject
 Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "TresDivas.Website.Master", "src\Project\Website\tds\TresDivas.Website.Master\TresDivas.Website.Master.scproj", "{79CB38A5-4944-4069-A2EC-DF3D3B9F3CBA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TresDivas", "TresDivas", "{1DCF7A54-5FF4-4EAD-853D-96BB81029A25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TresDivas.SocialInteractions.Processing", "src\Feature\TresDivas\code\TresDivas.SocialInteractions.Processing\TresDivas.SocialInteractions.Processing.csproj", "{8F3D7141-25B9-4E15-8574-0CC337C54A09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +64,10 @@ Global
 		{79CB38A5-4944-4069-A2EC-DF3D3B9F3CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79CB38A5-4944-4069-A2EC-DF3D3B9F3CBA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{79CB38A5-4944-4069-A2EC-DF3D3B9F3CBA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8F3D7141-25B9-4E15-8574-0CC337C54A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F3D7141-25B9-4E15-8574-0CC337C54A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F3D7141-25B9-4E15-8574-0CC337C54A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F3D7141-25B9-4E15-8574-0CC337C54A09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,9 +79,11 @@ Global
 		{C1C13197-67A8-4082-A35D-934C35830920} = {15D97D61-D597-42EC-B7E9-E9EC8130E630}
 		{112C57E8-D74F-4608-B2F0-AED035638FD3} = {C1C13197-67A8-4082-A35D-934C35830920}
 		{79CB38A5-4944-4069-A2EC-DF3D3B9F3CBA} = {C1C13197-67A8-4082-A35D-934C35830920}
+		{1DCF7A54-5FF4-4EAD-853D-96BB81029A25} = {17DD5718-6E13-4F2C-9738-B410396D4552}
+		{8F3D7141-25B9-4E15-8574-0CC337C54A09} = {1DCF7A54-5FF4-4EAD-853D-96BB81029A25}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {311DA37D-528B-43B2-A99B-E7253F841D46}
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Caching.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.ServiceBus.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Configuration.6.0.1304.0\lib\NET45
+		SolutionGuid = {311DA37D-528B-43B2-A99B-E7253F841D46}
 	EndGlobalSection
 EndGlobal
