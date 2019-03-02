@@ -15,9 +15,9 @@ The journey of the information/event will continue to go to XConnect and an outc
 
 In our example, we consider a example of a Best kitchen with three products and three unique hashtags one for each. 
 
-BestBarista Coffee Grinder = #bestbaristacoffeegrinder
-PerfectSmoothie Blender = #perfectsmoothieblender
-SunBright Toaster = #sunbrighttoaster
+ - BestBarista Coffee Grinder = #bestbaristacoffeegrinder
+ - PerfectSmoothie Blender = #perfectsmoothieblender
+ - SunBright Toaster = #sunbrighttoaster
 
 We hear for live tweets flowing with these hashtags and capture the interactions and outcomes to solve the problem of scattered reviews.
 What we also do is leverage Universal tracker ability to filter out tweets that are not 
@@ -34,9 +34,9 @@ Here it gets important to showcase the reviews bucketing them in to positive, ne
 Ranges Defined currently and potentially can be modified with help of data science behind them
 
 
-Postive Range  = { 0.8, 1}
-Negative Range = {0, 0.2}
-Neutral Range = {0.2, 0.5}
+- Postive Range  = { 0.8, 1}
+- Negative Range = {0, 0.2}
+- Neutral Range = {0.2, 0.5}
          
          
 
@@ -44,24 +44,31 @@ Neutral Range = {0.2, 0.5}
 
 Does your module rely on other Sitecore modules or frameworks?
 
-- List any dependencies
-- Or other modules that must be installed
-- Or services that must be enabled/configured
+- Sitecore 9.1 
+- Installation of Universal Tracker 
+- To Avoid any modifications of config files and patches please name your sitecore instance as ut.hackathon.com
+
 
 ## Installation
 
 Provide detailed instructions on how to install the module, and include screenshots where necessary.
 
-1. Use the Sitecore Installation wizard to install the [package](#link-to-package)
-2. ???
-3. Profit
+1. Clone master branch of Tres Divas repository [direct link](https://github.com/Sitecore-Hackathon/2019-Tres-Divas.git)
+2. Check the values on TDSGlobal.config located in root directory to ensure it is correct per your installation
+3. Rebuild solution and ensure all Nuget packages are rebuilt
+4. SYNC all TDS items in TDS projects included in the solution
+5. Right click on TresDivas.Website project and publish to your local website root
 
 ## Configuration
 
 How do you configure your module once it is installed? Are there items that need to be updated with settings, or maybe config files need to have keys updated?
 
 Remember you are using Markdown, you can provide code samples too:
-
+- Take the file located and checked in under 2019-Tres-Divas\src\Project\Console\code\TresDivas.ModelGeneration.Console\data and drop in to below locations under your website directories
+    --C:\inetpub\wwwroot\hackathon.xconnect\App_Data\jobs\continuous\IndexWorker\App_data\Models
+    --C:\inetpub\wwwroot\hackathon.xconnect\App_Data\Models
+- Go to below project under location 2019-Tres-Divas\src\Feature\TresDivas\code\TresDivas.SocialInteractions.Processing 
+    -- Update the constants.cs and put in the values for XConnectThumbprint and XConnectInstance to match the local values
 ```xml
 <?xml version="1.0"?>
 <!--
