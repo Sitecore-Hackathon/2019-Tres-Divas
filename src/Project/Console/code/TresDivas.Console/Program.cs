@@ -18,10 +18,6 @@ namespace TresDivas.Console
 {
     class Program
     {
-        //public const string TwitterApiKey = "uyxX2aH6Hd3MDGDYnxaiyNR0u";
-        //public const string TwitterApiSecretKey = "MQdMRdmKAyX5C9FFXp1chZp8Ut4lJWBObOqqlppqCQcKl6n33Q";
-        //public const string TwitterAccessToken = "187039570-Zmsqhp8mbHdE8Tk7ung7Nl5P9a0BFHaR9brUiZoE";
-        //public const string TwitterAccessTokenSecret = "49a0owIcTgiDIC9tZOlTsmh0j3UNHXBSAImM0KPftli7F";
         public const string TwitterApiKey = "K9zwVXwdjmsxVSfoEHd1gxluQ";
         public const string TwitterApiSecretKey = "YHTDuz9NojmDr5WP0i91mHsfGyHkQ6YwRGzPmFwFvdVqaR9Amz";
         public const string TwitterAccessToken = "26886163-SR9DcWa3757tJDH1OCNpgFgoYIZlslYltkmx9Mg0U";
