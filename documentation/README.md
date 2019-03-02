@@ -81,6 +81,15 @@ namespace TresDivas.SocialInteractions.Processing
 ```
 - After this manual steps restart all associated services including xconnect
 
+## Future Scope
+
+- Retailers to display product reviews on their pages via distributed x-connect device
+- Check back on this account to see if more followers using the required age of account and then delete this if threshold is still not met.
+- Expand to other social community channels like Facebook and Instagram and accept product lifestyle comments.
+- Product Registration will allow users to register via tweet to consider them verified in the future so we ensure only qualified users can leave reviews
+
+
+
 ## About Us 
 
 
