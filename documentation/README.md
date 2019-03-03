@@ -1,68 +1,110 @@
 # Documentation
 
-The documentation for this years Hackathon must be provided as a readme in Markdown format as part of your submission. 
-
-You can find a very good reference to Github flavoured markdown reference in [this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). If you want something a bit more WYSIWYG for editing then could use [StackEdit](https://stackedit.io/app) which provides a more user friendly interface for generating the Markdown code. Those of you who are [VS Code fans](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview) can edit/preview directly in that interface too.
-
-Examples of things to include are the following.
+The purpose of this module is to revolutionize the way product reviews are submitted and to provide a way to aggregate all reviews for a product in one place. Currently, product reviews can be found scattered across various resellers of the product with little or no sharing.
+Using Twitter tweets as a backdrop, we propose that reviews be submitted directly to the manufacturer.
 
 ## Summary
 
-**Category:** Hackathon Category
+**Category:** Best Use of Universal Tracker
 
 What is the purpose of your module? What problem does it solve and how does it do that?
+
+Usually the product reviews are scattered across and it is usually hard to aggregate them.  The purpose of this module is to solve the aggregation problem by providing specific twitter hash tag for the product.
+This can then we used by the end user to tweet about the product.  We then have a listener that listens to the tweets and pushes the events to Universal tracker. 
+The journey of the information/event will continue to go to XConnect and an outcome is created. Outcomes are identified by twitter handle and carry information about the tweet and sentiment. 
+
+In our example, we consider a example of a Best kitchen with three products and three unique hashtags one for each. 
+
+ - BestBarista Coffee Grinder = #bestbaristacoffeegrinder
+ - PerfectSmoothie Blender = #perfectsmoothieblender
+ - SunBright Toaster = #sunbrighttoaster
+
+We hear for live tweets flowing with these hashtags and capture the interactions and outcomes to solve the problem of scattered reviews.
+What we also do is leverage Universal tracker ability to filter out tweets that are not 
+
+Currently, we are looking for below settings to determine if a tweet is important enough to be considered as interaction.  These settings are stored on Sitecore to ensure this idea can be extended.
+
+- Age of Twitter account
+- Minimum number of followers
+- Is it a retweet or no?
+
+On the aggregation side of things, we believe as with any reviews the end user is interested in understanding how the product is overall. 
+Here it gets important to showcase the reviews bucketing them in to positive, neutral or negative.  We leveraged Text Analyzer from Microsoft [direct link](https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/) Cognitive Services to get the Sentiment and came up with ranges based on Sentiment that we think would determine where the review fits.
+
+Ranges Defined currently and potentially can be modified with help of data science behind them
+
+
+- Postive Range  = { 0.8, 1}
+- Negative Range = {0, 0.2}
+- Neutral Range = {0.2, 0.5}
+         
+         
 
 ## Pre-requisites
 
 Does your module rely on other Sitecore modules or frameworks?
 
-- List any dependencies
-- Or other modules that must be installed
-- Or services that must be enabled/configured
+- Sitecore 9.1 - Ensure all pre-requisites for 9.1 are in check [direct link](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/91/Sitecore_Experience_Platform_91_Initial_Release.aspx)
+- Installation of Universal Tracker 
+- To Avoid any modifications of config files and patches please name your sitecore instance as ut.hackathon.com
+
 
 ## Installation
 
 Provide detailed instructions on how to install the module, and include screenshots where necessary.
 
-1. Use the Sitecore Installation wizard to install the [package](#link-to-package)
-2. ???
-3. Profit
+1. Clone master branch of Tres Divas repository [direct link](https://github.com/Sitecore-Hackathon/2019-Tres-Divas.git)
+2. Check the values on TDSGlobal.config located in root directory to ensure it is correct per your installation
+3. Rebuild solution and ensure all Nuget packages are rebuilt
+4. SYNC all TDS items in TDS projects included in the solution
+5. Right click on TresDivas.Website project and publish to your local website root
 
 ## Configuration
 
-How do you configure your module once it is installed? Are there items that need to be updated with settings, or maybe config files need to have keys updated?
+The below steps would be needed to ensure the solution works 
 
-Remember you are using Markdown, you can provide code samples too:
+Adjust the xConnect service url located here:
+C:\git\hackathon\2019-Tres-Divas\src\Project\Console\code\TresDivas.Console\Program.cs
 
-```xml
-<?xml version="1.0"?>
-<!--
-  Purpose: Configuration settings for my hackathon module
--->
-<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
-  <sitecore>
-    <settings>
-      <setting name="MyModule.Setting" value="Hackathon" />
-    </settings>
-  </sitecore>
-</configuration>
+- Take the .json model file located and checked in under 2019-Tres-Divas\src\Project\Console\code\TresDivas.ModelGeneration.Console\data and drop in to below locations under your website directories:
+    --C:\inetpub\wwwroot\hackathon.xconnect\App_Data\jobs\continuous\IndexWorker\App_data\Models
+    --C:\inetpub\wwwroot\hackathon.xconnect\App_Data\Models
+
+- Go to below project under location 2019-Tres-Divas\src\Feature\TresDivas\code\TresDivas.SocialInteractions.Processing 
+    -- Update the constants.cs and put in the values for XConnectThumbprint and XConnectInstance to match the local values
+    -- Reference below
 ```
+namespace TresDivas.SocialInteractions.Processing
+{
+    public class Constants
+    {
+        public const string XConnectThumbprint = "D77AAB9D28CBDD254D52DFFB3F32096DAEA05D7B";
+        public const string XConnectInstance = "https://xconnect.ut.hackathon.com";
+    }
+}
+```
+- Do the steps shown below in screenshots 
 
-## Usage
+![Services](images/Services.png?raw=true "Service Change")
 
-Provide documentation  about your module, how do the users use your module, where are things located, what do icons mean, are there any secret shortcuts etc.
+![Folder Swap](images/FolderSwap.png?raw=true "Folder Swap")
 
-Please include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
+- After this manual steps restart all associated services including xconnect
 
-![Hackathon Logo](images/hackathon.png?raw=true "Hackathon Logo")
+## Future Scope
 
-You can embed images of different formats too:
+- Retailers to display product reviews on their pages via distributed x-connect device
+- Check back on this account to see if more followers using the required age of account and then delete this if threshold is still not met.
+- Expand to other social community channels like Facebook and Instagram and accept product lifestyle comments.
+- Product Registration will allow users to register via tweet to consider them verified in the future so we ensure only qualified users can leave reviews
 
-![Deal With It](images/deal-with-it.gif?raw=true "Deal With It")
 
-And you can embed external images too:
 
-![Random](https://placeimg.com/480/240/any "Random")
+## About Us 
+
+
+![TresDivas](images/TresDivas.jpg?raw=true "TresDivas Logo")
+
 
 ## Video
 

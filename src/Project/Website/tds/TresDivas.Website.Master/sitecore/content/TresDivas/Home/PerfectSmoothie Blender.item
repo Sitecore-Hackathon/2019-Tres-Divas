@@ -1,0 +1,52 @@
+----item----
+version: 1
+id: {15EC5A97-8566-4602-9E78-DBFA17A8B302}
+database: master
+path: /sitecore/content/TresDivas/Home/PerfectSmoothie Blender
+parent: {110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}
+name: PerfectSmoothie Blender
+master: {00000000-0000-0000-0000-000000000000}
+template: {DD18839A-0567-484A-AE3B-0407E6C4C336}
+templatekey: Product Detail
+created: 20190302T224218Z
+
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 300
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{931FDA77-476F-4EC1-83AE-BF40569D472C}" s:ds="{CD063106-AADB-49D7-8760-E997BC8A6E21}" s:par="" /><r uid="{18033234-3379-4D4C-A869-5340F87434AC}" s:ds="{67078216-BAAF-4025-AFAB-13A9108D0BFE}" s:par="" /></d></r>
+----version----
+language: en
+version: 1
+revision: 461c9c41-bdcd-480b-a37b-522788dde876
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20190302T052934Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+461c9c41-bdcd-480b-a37b-522788dde876
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20190302T225129Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

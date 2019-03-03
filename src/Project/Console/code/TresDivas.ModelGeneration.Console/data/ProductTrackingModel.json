@@ -1,0 +1,92 @@
+{
+  "Name": "ProductTrackingModel",
+  "Version": "1.0",
+  "References": [
+    {
+      "Name": "XConnect",
+      "Version": "1.0"
+    },
+    {
+      "Name": "Sitecore.XConnect.Collection.Model",
+      "Version": "9.0"
+    }
+  ],
+  "Types": {
+    "Feature.Marketing.Model.Facets.TwitterAccountInfo": {
+      "Type": "Facet",
+      "BaseType": "Sitecore.XConnect.Facet",
+      "ClrType": "Feature.Marketing.Model.Facets.TwitterAccountInfo, Feature.Marketing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Properties": {
+        "TwitterHandle": {
+          "Type": "String"
+        },
+        "TwitterStartDate": {
+          "Type": "DateTime"
+        },
+        "NumberOfFollowers": {
+          "Type": "Int32"
+        },
+        "VerifiedTwitterHandle": {
+          "Type": "Boolean"
+        }
+      }
+    },
+    "Feature.Marketing.Model.Events.ProductReviewOutcome": {
+      "Type": "Event",
+      "BaseType": "Sitecore.XConnect.Outcome",
+      "ClrType": "Feature.Marketing.Model.Events.ProductReviewOutcome, Feature.Marketing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Properties": {
+        "ProductTweet": {
+          "Type": "Feature.Marketing.Model.Events.ProductTweet"
+        }
+      }
+    },
+    "Feature.Marketing.Model.Events.ProductTweet": {
+      "Type": "Complex",
+      "ClrType": "Feature.Marketing.Model.Events.ProductTweet, Feature.Marketing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Properties": {
+        "ProductHashtag": {
+          "Type": "String"
+        },
+        "Tweet": {
+          "Type": "String"
+        },
+        "Sentiment": {
+          "Type": "Double?"
+        },
+        "TwitterHandle": {
+          "Type": "String"
+        }
+      }
+    },
+    "Feature.Marketing.Model.Events.ProductRegistrationGoal": {
+      "Type": "Event",
+      "BaseType": "Sitecore.XConnect.Goal",
+      "ClrType": "Feature.Marketing.Model.Events.ProductRegistrationGoal, Feature.Marketing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Properties": {
+        "ProductRegistration": {
+          "Type": "Feature.Marketing.Model.Events.ProductRegistration"
+        }
+      }
+    },
+    "Feature.Marketing.Model.Events.ProductRegistration": {
+      "Type": "Complex",
+      "ClrType": "Feature.Marketing.Model.Events.ProductRegistration, Feature.Marketing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Properties": {
+        "ProductHashtag": {
+          "Type": "String"
+        },
+        "SerialNumber": {
+          "Type": "String"
+        }
+      }
+    }
+  },
+  "Facets": [
+    {
+      "Target": "Contact",
+      "Name": "TwitterAccountInfo",
+      "Type": "Feature.Marketing.Model.Facets.TwitterAccountInfo"
+    }
+  ]
+}

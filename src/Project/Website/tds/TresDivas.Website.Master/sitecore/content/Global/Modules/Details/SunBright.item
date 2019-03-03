@@ -1,0 +1,105 @@
+----item----
+version: 1
+id: {5027772B-3912-4027-8BD7-F037FF801C74}
+database: master
+path: /sitecore/content/Global/Modules/Details/SunBright
+parent: {1B698B9E-0D2C-415D-B031-17BF4F890FC9}
+name: SunBright
+master: {00000000-0000-0000-0000-000000000000}
+template: {13CF5071-F642-4639-AEC7-B45A29C939C4}
+templatekey: Product Details
+created: 20190302T052950Z
+
+----version----
+language: en
+version: 1
+revision: 0e1bfca2-1053-409c-a21f-f10f8461f8d4
+
+----field----
+field: {8A69926F-388A-4296-83A6-454C1FB2359D}
+name: Product Name
+key: product name
+content-length: 17
+
+SunBright Toaster
+----field----
+field: {DB0E3E15-DC51-4075-865A-0084C20C854D}
+name: Product Image
+key: product image
+content-length: 58
+
+<image mediaid="{4C9C2C87-4CE7-4EF5-925F-981F72375B27}" />
+----field----
+field: {B9C46A24-959A-41FD-A697-65C341A132F1}
+name: Bagel Function
+key: bagel function
+content-length: 3
+
+Yes
+----field----
+field: {5972527D-0E03-4F55-9BC4-9B707896A1C2}
+name: Shade Selection
+key: shade selection
+content-length: 14
+
+Black and Grey
+----field----
+field: {E7971B67-73C0-4BF3-A3FD-D2A85A226EF7}
+name: Extra Lift
+key: extra lift
+content-length: 8
+
+Existing
+----field----
+field: {0F663071-EFE6-4C41-B09B-FF5137D7B379}
+name: Description
+key: description
+content-length: 612
+
+2-slice toaster for toasting one or two slices of bread at a time; 6 shade settings accommodate individual preferences
+Extra-wide slots for bagels and thicker slices; each slot measures 5-1/4 inches long by 1-1/4 inches wide
+Bagel setting for toasting just the cut side; Frozen setting for defrosting bread; Cancel function ends the session at any time
+Extra-lift lever for safely removing smaller pieces; 22-inch power cord (when routed out the back); cord wrap; removable crumb tray (located in the back)
+Buttons illuminate to indicate selected settings; backed by an AmazonBasics limited one-year warranty
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20190302T052950Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0e1bfca2-1053-409c-a21f-f10f8461f8d4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20190302T065236Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

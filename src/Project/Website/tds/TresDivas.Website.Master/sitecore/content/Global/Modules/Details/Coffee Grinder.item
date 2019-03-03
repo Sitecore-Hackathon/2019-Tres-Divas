@@ -1,0 +1,98 @@
+----item----
+version: 1
+id: {49C9DB4F-12DB-43BA-8900-5E00CC3A2F91}
+database: master
+path: /sitecore/content/Global/Modules/Details/Coffee Grinder
+parent: {1B698B9E-0D2C-415D-B031-17BF4F890FC9}
+name: Coffee Grinder
+master: {00000000-0000-0000-0000-000000000000}
+template: {13CF5071-F642-4639-AEC7-B45A29C939C4}
+templatekey: Product Details
+created: 20190302T225205Z
+
+----version----
+language: en
+version: 1
+revision: 90a4782e-64d9-4ba5-9a9c-140e8c2baef8
+
+----field----
+field: {8A69926F-388A-4296-83A6-454C1FB2359D}
+name: Product Name
+key: product name
+content-length: 14
+
+Coffee Grinder
+----field----
+field: {DB0E3E15-DC51-4075-865A-0084C20C854D}
+name: Product Image
+key: product image
+content-length: 58
+
+<image mediaid="{B33FE8BE-9526-41FA-A3FE-3723402A03C8}" />
+----field----
+field: {5972527D-0E03-4F55-9BC4-9B707896A1C2}
+name: Shade Selection
+key: shade selection
+content-length: 14
+
+Black and Grey
+----field----
+field: {0F663071-EFE6-4C41-B09B-FF5137D7B379}
+name: Description
+key: description
+content-length: 1160
+
+【LIFETIME WARRANTLY】: Our manual coffee burr grinder made of high quality stainless steel and ceramics, have undergone rigorous testing, we provide 100% lifetime replacement or money back guarantee for all our manual burr coffee grinders
+【BONUS REPLACEMENT CERAMIC BURR】: Bonus high quality conical coffee mill for replacement, enjoy your fresh coffee everyday with our hand burr coffee grinder
+【ADUSTABLE GRIND SIZE】: Customize the grind size, clockwise from coarse to fine grind, Coarse-- for coffee grinder French Press Grind Chemex, Medium--for Drip Pour over coffee, Fine-- for Aeropress, Espresso Grinder
+【PORTABLE & EASY TO USE】: Small manual coffee grinder for 3 cup coffee, 6 tablespoons (30g) coffee bean per 18 oz of water, No batteries needed, cordless, compact burr mill coffee grinder without noise, brew freshly ground coffee for camping grinder, hiking, backpacking outdoors trip travel, best burr coffee grinder for you
+【SMOOTH & FRESHLY FLAVOR】: Conical Ceramic coffee grinder manual creates consistent coffee ground instead of the blade grinder, Frictional heat release coffee oil while milling, freshly Ground coffee manual burr grinder
+----field----
+field: {A0E9565F-44A2-4105-B51F-DBF098B8D891}
+name: Product HashTag
+key: product hashtag
+content-length: 25
+
+#bestbaristacoffeegrinder
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20190302T052950Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+90a4782e-64d9-4ba5-9a9c-140e8c2baef8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20190302T230227Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin
