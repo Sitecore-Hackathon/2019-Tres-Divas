@@ -63,9 +63,13 @@ Provide detailed instructions on how to install the module, and include screensh
 
 The below steps would be needed to ensure the solution works 
 
-- Take the file located and checked in under 2019-Tres-Divas\src\Project\Console\code\TresDivas.ModelGeneration.Console\data and drop in to below locations under your website directories
+Adjust the xConnect service url located here:
+C:\git\hackathon\2019-Tres-Divas\src\Project\Console\code\TresDivas.Console\Program.cs
+
+- Take the .json model file located and checked in under 2019-Tres-Divas\src\Project\Console\code\TresDivas.ModelGeneration.Console\data and drop in to below locations under your website directories:
     --C:\inetpub\wwwroot\hackathon.xconnect\App_Data\jobs\continuous\IndexWorker\App_data\Models
     --C:\inetpub\wwwroot\hackathon.xconnect\App_Data\Models
+
 - Go to below project under location 2019-Tres-Divas\src\Feature\TresDivas\code\TresDivas.SocialInteractions.Processing 
     -- Update the constants.cs and put in the values for XConnectThumbprint and XConnectInstance to match the local values
     -- Reference below
