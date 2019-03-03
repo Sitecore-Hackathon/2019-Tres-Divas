@@ -108,6 +108,5 @@ namespace TresDivas.SocialInteractions.Processing
 
 ## Video
 
-Please provide a video highlighing your Hackathon module submission and provide a link to the video. Either a [Video link](https://recordings.join.me/SIdoLWHgHU2TkWnqWXu_pw) to the video, upload it to this documentation folder or maybe upload it to Youtube...
+Please see our video by clicking on this link a [Video link](https://recordings.join.me/SIdoLWHgHU2TkWnqWXu_pw) 
 
-[![Sitecore Hackathon Video Embedding Alt Text](https://img.youtube.com/vi/EpNhxW4pNKk/0.jpg)](https://www.youtube.com/watch?v=EpNhxW4pNKk)
