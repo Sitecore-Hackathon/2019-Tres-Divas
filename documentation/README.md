@@ -79,6 +79,10 @@ namespace TresDivas.SocialInteractions.Processing
     }
 }
 ```
+- Do the steps shown below in screenshots 
+
+![Services](images/Services.jpg?raw=true "Service Change")
+![Folder Swap](images/FolderSwap.jpg?raw=true "Folder Swap")
 - After this manual steps restart all associated services including xconnect
 
 ## Future Scope
